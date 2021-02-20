@@ -1,0 +1,275 @@
+$font-body: 'Roboto', sans-serif;
+$font-head: 'Jaldi', sans-serif;
+
+.title-with-function {
+  display: flex;
+  justify-content: space-between;
+}
+
+.table {
+  width: 100%;
+  td {
+    vertical-align: middle;
+  }
+
+  tr, td {
+    min-height: 3rem;
+    position: relative;
+  }
+
+  &.is-action {
+    .table-functions {
+      @include transition(opacity .25s ease-in-out 50ms);
+      opacity: 0;
+      .button:first-child {
+        margin-right: $space;
+      }
+    }
+    tr td:last-child {
+      //
+    }
+
+    tr {
+      &:hover {
+        background-color: $white-bis;
+        .table-functions {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+html, body {
+  font-size: 16px;
+  //background: $dark;
+}
+
+html {
+  min-width: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: $brand;
+  text-decoration: none;
+  &:hover {
+    transition: all 0.5 ease;
+    color: h($brand);
+  }
+}
+
+.login {
+  background-color: #f5f8fa;
+  box-shadow: none;
+  border-radius: 1rem;
+  border: solid 1px $lighter;
+  .button {
+    &.is-primary {
+      background: $primary;
+    }
+  }
+  .card-header {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    box-shadow: none;
+    background-color: $secondary;
+    .title {
+      font-size: 1.5rem;
+      color: $white;
+    }
+
+  }
+  .card-footer {
+    .notification {
+      width: 100%;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
+  }
+
+}
+
+main.admin {
+  background-color: #f5f8fa;
+  padding-left: 0;
+  @include transition(padding .25s ease-in-out 50ms);
+
+  header {
+    height: $header-height;
+  }
+
+  .button {
+    &.is-primary {
+
+    }
+  }
+
+  &.has-aside-left {
+    nav.navbar {
+      @include transition(padding .25s ease-in-out 50ms);
+      padding-left: $aside-width;
+      //padding-right: 1rem;
+    }
+    aside.is-placed-left {
+      display: block;
+      @include transition(all .25s ease-in-out 50ms);
+      left: -$aside-width;
+      .menu-wrapper {
+        opacity: 0;
+      }
+      &.hasLeftAsideExpanded {
+        left: 0;
+        width: $aside-width;
+        .menu-wrapper {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &.has-aside-right {
+    aside.is-placed-right {
+      height: calc(100vh - $header-height);
+      @include transition(right .25s ease-in-out 50ms);
+      width: $aside-width;
+      right: -$aside-width;
+      top: $header-height;
+      left: auto;
+      &.hasRightAsideExpanded {
+        right: 0;
+      }
+    }
+  }
+
+  &.hasLeftAsideExpanded {
+    padding-left: $aside-width;
+  }
+
+  &.hasRightAsideExpanded {
+    padding-right: $aside-width;
+  }
+
+  .header-functions {
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 32;
+    height: $header-height;
+    flex-direction: row;
+
+    .aside-toggle, input.input {
+      height: $header-height;
+      &.button {
+        border-radius: 0;
+      }
+    }
+
+    input.input {
+      border: none;
+      box-shadow: none;
+      &:focus, &:active {
+        border: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  aside.aside {
+    z-index: 39;
+    height: 100vh;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $light;
+    .header-brand {
+      margin: 1.5rem 0;
+      a {
+        display: block;
+        text-align: center;
+      }
+    }
+    .menu-wrapper {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      .menu {
+        padding: 1rem;
+      }
+    }
+  }
+
+  nav.navbar {
+    height: $header-height;
+    .navbar-burger {
+      display: flex;
+      &.button {
+        border-radius: 0;
+      }
+      span {
+        background-color: none;
+
+      }
+    }
+    .burger {
+      margin: auto;
+    }
+
+    .nav-items {
+      display: flex;
+      justify-content: flex-end;
+      button.button {
+        height: $header-height;
+        border-radius: 0;
+      }
+
+      .dropdown {
+        .dropdown-trigger {
+          .button {
+            border: none;
+            box-shadow: none;
+            &:focus, &:active {
+              border: none;
+              box-shadow: none;
+            }
+          }
+        }
+        .dropdown-menu {
+          min-width: 8rem;
+        }
+        &.active {
+          .dropdown-menu {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  section.section {
+    min-height: calc(100vh - 172px);
+  }
+
+  .content-wrapper {
+    padding: 1em;
+    background: $white;
+    border-radius: $size;
+  }
+
+  footer {
+    //padding: 3rem 1.5rem;
+    background-color: $white;
+    //max-height: 7.5rem;
+  }
+
+}

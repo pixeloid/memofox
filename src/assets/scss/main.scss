@@ -1,0 +1,95 @@
+html, body {
+
+}
+
+.button {
+  font-family: Raleway;
+  font-weight: 700;
+  border-radius: 56px;
+  font-size: 1rem;
+
+  &.is-primary {
+    color: $white;
+    background-color: $primary;
+    &:hover {
+      color: $white;
+      background-color: darken( $primary, 10% );
+    }
+  }
+  &.is-secondary {
+    color: $white;
+    background-color: $secondary;
+    &:hover {
+      color: $white;
+      background-color: darken( $secondary, 10% );
+    }
+  }
+
+  &.is-medium {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 1rem;
+  }
+
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+
+#app {
+  .main {
+    background-color: $bg;
+    font-family: Oxygen;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    .title {
+      font-family: Raleway;
+      font-weight: 800;
+    }
+
+    .memo, .fox {
+      font-family: Raleway;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .memo {
+      color: $primary;
+    }
+
+    .button {
+      font-family: Raleway;
+      font-weight: 700;
+      border-radius: 56px;
+      color: $white;
+      //text-transform: uppercase;
+      font-size: 1rem;
+
+      &.is-primary {
+        background-color: $primary;
+        &:hover {
+          background-color: darken( $primary, 10% );
+        }
+      }
+      &.is-secondary {
+        background-color: $secondary;
+        &:hover {
+          background-color: darken( $secondary, 10% );
+        }
+      }
+
+      &.is-medium {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-size: 1rem;
+      }
+
+    }
+
+  }
+
+}

@@ -1,0 +1,52 @@
+.hero.is-memofox-hero {
+  height: $hero-height;
+  width: 100%;
+
+  &.container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .hero-body {
+    z-index: 1;
+    padding-left: 0;
+    padding-right: 0;
+
+    .title {
+      color: $darker;
+      text-transform: uppercase;
+      font-size: 1.75rem;
+      line-height: 2.5rem;
+      text-align: left;
+    }
+    .subtitle {
+      font-size: 18px;
+      line-height: 1.75rem;
+      text-align: left;
+      margin-bottom: 2rem;
+      color: $darker;
+    }
+
+    .separator-line {
+      height: 2px;
+      background: $primary;
+    }
+
+  }
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  width: 100%;
+  height: $hero-height;
+  overflow: hidden;
+  background: linear-gradient(#EBCBC9, #FAE9E8);
+  img {
+    width: 70%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
