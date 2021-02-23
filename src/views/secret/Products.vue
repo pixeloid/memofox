@@ -186,8 +186,6 @@ export default {
         this.product.name = null
         this.product.price = null
         this.product.sort = null
-        //this.getData('products')
-        //this.reset()
       } catch(err) {
         onsole.error("Error adding document: ", err)
       }

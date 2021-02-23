@@ -109,9 +109,43 @@ main.admin {
   }
 
   .button {
-    &.is-primary {
+    font-family: Raleway;
+    font-weight: 700;
+    border-radius: 56px;
+    font-size: 1rem;
 
+    &.is-primary {
+      color: $white;
+      background-color: $primary;
+
+      &.is-outline {
+
+      }
+      &:hover {
+        color: $white;
+        background-color: darken( $primary, 10% );
+      }
     }
+    &.is-secondary {
+      color: $white;
+      background-color: $secondary;
+
+      &.is-outline {
+        background-color: none!important;
+      }
+
+      &:hover {
+        color: $white;
+        background-color: darken( $secondary, 10% );
+      }
+    }
+
+    &.is-medium {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      font-size: 1rem;
+    }
+
   }
 
   &.has-aside-left {

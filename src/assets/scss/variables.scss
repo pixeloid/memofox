@@ -14,6 +14,18 @@ $header-height  : 3.25rem;
 
 $aside-width : 12rem;
 
+$text-size-title-primary: 1.75rem;
+$text-size-title-secondary: 1.5rem;
+$text-height-title-primary: 2.5rem;
+$text-height-title-secondary: 2rem;
+
+$text-size-lead: 1.125rem;
+$text-height-lead: 1.75rem;
+
+$main-shadow: 0px 4px 1rem rgba(0,0,0,0.1);
+
+
+
 //ASSETS
 //$asset-base-path: '..';
 //$material-icons-font-path: '~material-icons/iconfont/';
@@ -55,8 +67,8 @@ $aside-width : 12rem;
 }
 
 //Bulma revariables
-$box-color: $black;
-$box-background-color: $bg;
+//$box-color: $black;
+//$box-background-color: $bg;
 $box-radius: $size;
 $box-shadow: none;
 $box-padding: $space * 4;

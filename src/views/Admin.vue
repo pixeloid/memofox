@@ -62,7 +62,7 @@
             <ul class="menu-list">
               <li><router-link :to="{ name: 'Secret', params: {} }">Dashboard</router-link></li>
               <li><router-link :to="{ name: 'Overview', params: {} }">Overview</router-link></li>
-              <li><router-link :to="{ name: 'Products', params: {} }">Products</router-link></li>
+              <li><router-link :to="{ name: 'secretProducts', params: {} }">Products</router-link></li>
               <li><router-link :to="{ name: 'Orders', params: {} }">Orders</router-link></li>
             </ul>
           </div>

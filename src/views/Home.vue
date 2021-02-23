@@ -1,42 +1,41 @@
 <template>
   <div class="main">
-    <Navigation id="nav" class="main" />
-    <section class="hero is-medium is-memofox-hero container">
-      <div class="hero-body">
-        <div class="columns">
-          <div class="column is-half">
-            <p class="title">
-              Küldetésünk, hogy megmentsük a fiók mélyére száműzött emlékeidet.
-            </p>
-            <div class="columns">
-              <div class="column is-one-third">
-                <div class="separator-line"></div>
-              </div>
+    <Nav />
+    <Hero />
+    <div class="bg-light">
+      <div class="container">
+        <div class="pt-6 pb-6">
+          <h2 class="title is-fox has-text-centered">Az időd drága</h2>
+          <div class="columns is-centered">
+            <div class="column is-three-fifths">
+              <p class="lead-text has-text-centered">
+                Töltsd fel a felvételeidet, amiket egy kiránduláson, nászúton, vagy bármilyen számodra fontos eseményen készítettél!
+                <br /><strong>Majd dőlj hátra és lazíts, miközben készül a menő videód!</strong>
+              </p>
             </div>
-            <p class="subtitle">
-              Készen állsz a kalandra? Egészen idáig utaztál, így itt az ideje, hogy találkozz a <span class="memo">Memo</span><span class="fox">Fox</span> Videószerkesztő szolgáltatásával.
-            </p>
-
-            <button type="button" class="button is-primary is-medium" name="button">Szerezz egy videót</button>
           </div>
         </div>
       </div>
-    </section>
-    <div class="hero-bg">
-      <img src="../assets/svg/header_hero_bg.svg" alt="">
-    </div>  
+    </div>
+    <FourStep />
+    <Vimeo />
+
+    <Footer />
+
   </div>
 </template>
 
 <script>
 
 import Nav from "@/components/nav"
+import Hero from "@/components/hero"
+import FourStep from "@/components/fourStep"
+import Vimeo from "@/components/videoHeroSimple"
 import Footer from "@/components/footer"
 
 export default {
   components: {
-    'Navigation': Nav,
-    'Footer': Footer
+    Nav, Hero, FourStep, Vimeo, Footer
   }
 }
 </script>
