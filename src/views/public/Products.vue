@@ -1,5 +1,5 @@
 <template>
-  <div class="main page-with-nav bg-light">
+  <div class="main page-with-nav four-step-bg">
     <Nav />
     <div class="container">
       <div class="columns is-centered">
@@ -37,10 +37,12 @@ import FourStep from "@/components/fourStep"
 import orderForm from "@/components/orderForm"
 import Footer from "@/components/footer"
 export default {
+
   components: {
     Nav, Footer, FourStep, orderForm
   }
 }
+
 </script>
 
 <style lang="scss">

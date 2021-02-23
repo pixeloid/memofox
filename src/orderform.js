@@ -65,19 +65,70 @@ export const orderForm = [{
     active: false,
     name: 'Epikus stílus',
     info: {
-      subtitle: null,
-
+      highlight: false,
+      message: null,
+      desc: [
+        'Színkorrekciók',
+        'Színillesztés és keverés',
+        'Dinamikus átmenetek',
+        'Természetes kameraátmenetek',
+        'Beépített kamera audio',
+        'Külső hangeffektek integrálása',
+        'Képstabilizálás',
+        'Vlog szerkesztés'
+      ]
     },
     image: null
   },{
     active: true,
     name: 'Mozi stílus',
     info: {
-      subtitle: 'Legnépszerűbb!',
       highlight: true,
-
-
+      message: 'A legnépszerűbb!',
+      desc: [
+        'Színkorrekciók',
+        'Színillesztés és keverés',
+        'Dinamikus átmenetek',
+        'Természetes kameraátmenetek',
+        'Beépített kamera audio',
+        'Külső hangeffektek integrálása',
+        'Képstabilizálás',
+        'Vlog szerkesztés'
+      ]
     },
     image: null
+  }]
+},{
+  title: 'Válaszd ki, hogy milyen hosszú legyen a videód!',
+  multi: false,
+  items: [{
+    active: false,
+    name: '0 - 2 Perc',
+    image: null,
+    info: {
+      highlight: false,
+    }
+  },{
+    active: true,
+    name: '2 - 4 Perc',
+    image: null,
+    info: {
+      highlight: true,
+      message: 'A legnépszerűbb!'
+    }
+  },{
+    active: false,
+    name: '4 - 6 Perc',
+    image: null,
+    info: {
+      highlight: false
+    }
+  },{
+    active: false,
+    name: '6 - 8 Perc',
+    image: null,
+    info: {
+      highlight: false
+    }
   }]
 }]

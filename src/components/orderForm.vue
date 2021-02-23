@@ -6,7 +6,6 @@
           Az igénylőlap kitöltése után kiszámítjuk<br/>Neked az egyéni árat.
         </h2>
         <div class="order-form">
-
           <div class="mb-4">
 
             <p class="subtitle vcenter">
@@ -17,14 +16,21 @@
 
             <div class="columns is-multiline is-variable is-1 item-wrapper">
               <div v-for='(item, i) in itemWrapper[orderPageNumber].items' :key='i' class="column is-half">
-                <div class="item-box vcenter hcenter" @click="itemClick(i)" :id="i" v-bind:class="{'is-active': item.active, 'is-info': item.info}">
-                  <img :src="item.image">
-                  <p class="mt-2 name" v-bind:class="{'highlight': item.info}">
+                <div class="item-box vcenter hcenter" @click="itemClick(i)" v-bind:class="{'is-active': item.active, 'is-info': item.info}">
+                  <div v-if="item.info && item.info.highlight" class="item-highlight">
+                    {{ item.info.message }}
+                  </div>
+                  <span v-if="!item.info">
+                    <img :src="item.image">
+                  </span>
+                  <p class="mt-2 name hcenter">
                     {{ item.name }}
-                    <p v-if="item.info" class="item-subtitle" v-bind:class="{'highlight': item.info.highlight}">
-                      {{ item.info.subtitle }}
-                    </p>
                   </p>
+                  <ul v-if="item.info" class="item-info" v-bind:class="{'is-epic': item.info && !item.info.highlight}">
+                    <li class="hcenter" v-for="(d, index) in item.info.desc" :key="index">
+                      {{ d }}
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -95,9 +101,6 @@ export default {
       if(!multi) {
         //this.itemWrapper[this.orderPageNumber].items.filter(o=>o.i===i).map(o=>o.active=true)
         data.filter(o=>o.i!==i).map(o=>o.active=false)
-
-        console.log(this.itemWrapper[this.orderPageNumber].items.filter(o=>o.i!==i).map(o=>o))
-
         data[i].active = true
       } else {
         if(data[i].active) {
