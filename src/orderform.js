@@ -1,21 +1,27 @@
 export const orderForm = [{
   title: 'Válaszd ki a videód típusát',
   multi: false,
+  amount: false,
+  last: false,
   items: [{
     active: true,
     name: 'Utazás vagy Kaland Videó',
+    icon: 'hiking',
     image: require('@/assets/svg/traveler.svg')
   },{
     active: false,
     name: 'Extrém sport vagy Motorsport Videó',
+    icon: 'kayaking',
     image: require('@/assets/svg/action.svg')
   },{
     active: false,
     name: 'Vlog Videó',
+    icon: 'video_camera_front',
     image: require('@/assets/svg/vlog.svg')
   },{
     active: false,
     name: 'Esemény, Nászút vagy Esküvői Videó',
+    icon: 'event',
     image: require('@/assets/svg/party.svg')
   }]
 },{
@@ -33,6 +39,8 @@ export const orderForm = [{
 },{
   title: 'Válaszd ki, hogy milyen eszközökkel készültek a felvételek!',
   multi: true,
+  amount: false,
+  last: false,
   items: [{
     active: false,
     name: 'Akció kamera (GoPro, Sony... stb.)',
@@ -61,6 +69,8 @@ export const orderForm = [{
 },{
   title: 'Milyen legyen a szerkesztés stílusa?',
   multi: false,
+  amount: false,
+  last: false,
   items: [{
     active: false,
     name: 'Epikus stílus',
@@ -101,6 +111,8 @@ export const orderForm = [{
 },{
   title: 'Válaszd ki, hogy milyen hosszú legyen a videód!',
   multi: false,
+  amount: false,
+  last: false,
   items: [{
     active: false,
     name: '0 - 2 Perc',
@@ -130,5 +142,96 @@ export const orderForm = [{
     info: {
       highlight: false
     }
+  }]
+},{
+  title: 'Becsüld meg a felvételeid méretét!',
+  multi: false,
+  amount: true,
+  last: false,
+  items: [{
+    active: false,
+    name: '20Gb',
+    image: null,
+    info: {
+      highlight: false,
+    }
+  },{
+    active: true,
+    name: '30Gb',
+    image: null,
+    info: {
+      highlight: false,
+    }
+  },{
+    active: false,
+    name: '40Gb',
+    image: null,
+    info: {
+      highlight: false,
+    }
+  },{
+    active: false,
+    name: '50Gb',
+    image: null,
+    info: {
+      highlight: false,
+    }
+  },{
+    active: false,
+    name: '60Gb',
+    image: null,
+    info: {
+      highlight: false,
+    }
+  },{
+    active: false,
+    name: '70Gb',
+    image: null,
+    info: {
+      highlight: false,
+    }
+  },{
+    active: false,
+    name: '80Gb',
+    image: null,
+    info: {
+      highlight: false,
+    }
+  },{
+    active: false,
+    name: '120Gb',
+    image: null,
+    info: {
+      highlight: false,
+    }
+  },{
+    active: false,
+    name: '160Gb',
+    image: null,
+    info: {
+      highlight: false,
+    }
+  },{
+    active: false,
+    name: '200Gb',
+    image: null,
+    info: {
+      highlight: false,
+    }
+  }]
+},{
+  title: 'Add meg az e-mail címed!',
+  multi: false,
+  amount: false,
+  last: true,
+  items: [{
+    active: false,
+    name: 'Fontos lépés, mert csapatunk e-mailben fog Veled kommunikálni.',
+    image: null,
+    info: {
+      highlight: false,
+      message: null,
+      desc: []
+    },
   }]
 }]
