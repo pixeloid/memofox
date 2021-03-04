@@ -1,5 +1,5 @@
 .main {
-  background-color: #F5EEE7;
+  background-color: $bg-light;
   font-family: Jaldi;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
@@ -108,6 +108,51 @@
       background-color: $dark;
       color: $light;
     }
+  }
+
+  .what-we-do {
+    background-image: url('/svg/mountains-background.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .player-separator {
+    height: 320px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    overflow: hidden;
+    position: relative;
+
+    .columns {
+      position: relative;
+      z-index: 2;
+      .title, .lead-text {
+        color: white;
+        filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.9));
+      }
+
+      .lead-text {
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+    }
+
+    .player-block {
+      left: 0;
+      right: 0;
+      position: absolute;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      align-content: center;
+      min-height: 100%;
+      max-height: 100%;
+      width: 100%;
+      >div { width: 100%; }
+
+    }
+
   }
 
   // Mobile size

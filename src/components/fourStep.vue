@@ -1,11 +1,11 @@
 <template>
-  <div class="four-step-bg pt-max pb-max">
+  <div class="four-step-bg pt-6 pb-6">
     <div class="container">
       <div class="four-step">
         <h2 class="title is-primary has-text-centered mb-6">
           Hogyan működik?
         </h2>
-        <div class="columns is-multiline">
+        <div class="columns is-multiline mb-6">
           <div class="column is-one-quarter-desktop is-half-tablet pb-4">
             <div class="fourstep-block has-text-centered">
               <img src="../assets/svg/fourstep-one.svg" alt="">
@@ -50,6 +50,9 @@
               </p>
             </div>
           </div>
+        </div>
+        <div class="hcenter">
+          <router-link class="button is-primary is-medium" :to="{ name: 'Products', params: {} }">Próbáld ki!</router-link>
         </div>
       </div>
     </div>
