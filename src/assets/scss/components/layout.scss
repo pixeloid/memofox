@@ -1,0 +1,147 @@
+.main {
+  background-color: #F5EEE7;
+  font-family: Jaldi;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  .pt-max {
+    padding-top: 5rem;
+  }
+  .pb-max {
+    padding-bottom: 5rem;
+  }
+
+  .container {
+    min-width: 100%;
+    margin: 0 0;
+  }
+
+  .columns {
+    width: 100%;
+  }
+
+  .vcenter {
+    display: flex;
+    align-items: center;
+  }
+
+  .hcenter {
+    display: flex;
+    justify-content: center;
+  }
+
+  .memo, .fox {
+    font-family: Jaldi;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .fox {
+    color: $primary;
+  }
+
+  .separator-line {
+    height: 2px;
+    background: $primary;
+  }
+
+  hr {
+    background: url('~@/assets/svg/content_separator.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: $size;
+    margin-top: 0;
+    opacity: 0.5;
+
+    &.simple {
+      height: 1px;
+      background: $darker;
+      opacity: 0.1;
+    }
+  }
+
+  .lead-text {
+    color: $darker;
+    font-size: $text-size-lead;
+    line-height: $text-height-lead;
+    strong{
+      color: $darker;
+      font-weight: 700;
+    }
+  }
+
+  .bread-text {
+    color: $darker;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .footer {
+    background-color: darken( $secondary, 30% );
+  }
+
+  .bg-light {
+    background-image: url('~@/assets/svg/header_hero_background.svg');
+    background-position: center right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    //background-color: #FAF8F6!important;
+  }
+
+  .four-step-bg {
+    width: 100%;
+    background-color: $light;
+    //background-image: url('~@/assets/svg/mountains-background.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+  }
+
+  .fourstep-block {
+    .numb {
+      width: 2rem;
+      height: 2rem;
+      font-size: 1.5rem;
+      border-radius: 5rem;
+      margin-right: 1rem;
+      background-color: $dark;
+      color: $light;
+    }
+  }
+
+  // Mobile size
+  @media screen and (max-width: $mobileSize) {
+    .container {
+      padding: 0 2rem;
+    }
+  }
+
+  // tablet size
+  @media screen and (min-width: $tabletSize) {
+    .container {
+      padding: 0 3rem;
+    }
+  }
+
+  @media screen and (min-width: $desktopSize) {
+    .container {
+      padding: 0 6rem;
+    }
+  }
+
+  @media screen and (min-width: $widescreenSize) {
+
+  }
+
+  @media screen and (min-width: $fullhdSize) {
+    .container {
+      padding: 0;
+      margin: 0 auto;
+      width: 1344px;
+      min-width: auto;
+      max-width: 1344px;
+    }
+  }
+
+}

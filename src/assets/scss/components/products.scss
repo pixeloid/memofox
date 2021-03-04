@@ -9,8 +9,13 @@
       padding: 1.5rem 1rem;
       background-color: rgba(255,255,255, 0.6);
       box-shadow: 0px 4px 1rem rgba(0,0,0,0.1);
-      height: 573px;
+      height: 556px;
       position: relative;
+
+      .subtitle {
+        font-weight: 600;
+        color: $darker;
+      }
 
       .order-sort-numb {
         display: flex;
@@ -47,32 +52,50 @@
       @include transition(background-color .25s ease-in-out 50ms);
       width: 100%;
       position: relative;
-      min-height: 120px;
       border-radius: 8px;
       background: rgba(255,255,255, 0.8);
       color: $darker;
-      //background: lighten($lighter, 90%);
-      //background: #FAF8F6;
       cursor: pointer;
-      flex-direction: column;
+      flex-direction: row;
+      justify-content: flex-start;
       border: 2px solid $lighter;
-      //font-weight: 600;
+      padding: $space 1rem;
+      box-shadow: 0px 2px 12px rgba(0,0,0,0.05);;
 
       &:hover {
         //background: $white;
         border-color: darken($lighter, 20%);
       }
 
+      .item-image {
+        padding-right: 1rem;
+        .material-icons {
+          font-size: 2rem;
+        }
+        img {
+          width: 80%;
+        }
+      }
+
+      .name {
+        font-size: 1.125rem;
+        //font-weight: 600;
+      }
+
       &.is-active {
-        border-color: $secondary;
+        border-color: $dark;
+        //background: $secondary;
+        color: $dark;
         .name {
-          //color: $primary;
-          //font-weight: 600;
+          //color: white;
+          font-weight: 600;
         }
       }
 
       // ha plusz infoval rendelkezik a lepes.
       &.is-info {
+        flex-direction: column;
+        justify-content: center;
         padding: 1rem;
         .name {
           width: 100%;
@@ -102,6 +125,7 @@
             padding: 4px 0;
             border-radius: 8px;
             margin-bottom: 2px;
+            background: whitesmoke;
             &:nth-child(2n) {
               font-weight: 600;
             }

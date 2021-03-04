@@ -33,7 +33,7 @@
                     </button>
                   </div>
                   <div class="column has-text-right">
-                    <button type="submit" class="button is-primary is-large" @click="nextStep">
+                    <button type="button" class="button is-primary is-large" @click="lastStep">
                       <span>A végösszeg kiszámítása</span>
                     </button>
                   </div>
@@ -43,14 +43,14 @@
             <div class="" v-else>
               <div class="columns is-multiline is-variable is-1 item-wrapper">
                 <div v-for='(item, i) in itemWrapper[orderPageNumber].items' :key='i' class="column" v-bind:class="{'is-half': !itemWrapper[orderPageNumber].amount,'is-one-fifth': itemWrapper[orderPageNumber].amount }">
-                  <div class="item-box vcenter hcenter" @click="itemClick(i)" v-bind:class="{'is-active': item.active, 'is-info': item.info}">
+                  <div class="item-box vcenter" @click="itemClick(i)" v-bind:class="{'is-active': item.active, 'is-info': item.info}">
                     <div v-if="item.info && item.info.highlight" class="item-highlight">
                       {{ item.info.message }}
                     </div>
-                    <span v-if="!item.info">
-                      <img :src="item.image">
+                    <span class="item-image" v-if="!item.info">
+                      <img :src="item.image" />
                     </span>
-                    <p class="mt-2 name hcenter">
+                    <p class="name hcenter">
                       {{ item.name }}
                     </p>
                     <ul v-if="item.info" class="item-info" v-bind:class="{'is-epic': item.info && !item.info.highlight}">
@@ -103,7 +103,8 @@ export default {
       backButton: false,
       selectedItems: [],
       emailAddress: null,
-      itemWrapper: orderForm
+      itemWrapper: orderForm,
+      reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/,
     }
   },
   methods: {
@@ -149,6 +150,13 @@ export default {
       }
 
       // this.selectedItems.push(data)
+    },
+    isEmailValid: function() {
+      return (this.emailAddress == "")? "" : (this.reg.test(this.emailAddress)) ? 'is-primary' : 'is-danger';
+    },
+    lastStep() {
+      console.log(this.isEmailValid())
+      console.log(this.emailAddress)
     }
 
   },

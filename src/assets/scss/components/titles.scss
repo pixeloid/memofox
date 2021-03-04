@@ -1,0 +1,53 @@
+.main {
+  .title {
+    font-family: Jaldi;
+    font-weight: 700;
+    color: $darker;
+    flex-direction: row;
+
+    &.is-fox {
+      color: $primary;
+    }
+
+    &.has-secondary-color {
+      color: $secondary;
+    }
+
+    &.is-primary {
+      //text-transform: uppercase;
+      font-size: $text-size-title-primary;
+      line-height: $text-height-title-primary;
+    }
+
+    &.is-secondary {
+      text-transform: none;
+      font-size: $text-size-title-secondary;
+      line-height: $text-height-title-secondary;
+      font-weight: 700;
+    }
+
+    &.subtitle {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+  }
+  @media screen and (max-width: $mobileSize) {
+    .title.is-primary {
+      font-size: $text-size-title-secondary;
+      line-height: $text-height-title-secondary;
+    }
+  }
+  @media screen and (min-width: $tabletSize) {
+    .title.is-primary {
+      font-size: $text-size-title-secondary;
+      line-height: $text-height-title-secondary;
+    }
+  }
+  @media screen and (min-width: $desktopSize) {
+    .title.is-primary {
+      font-size: $text-size-title-primary;
+      line-height: $text-height-title-primary;
+    }
+  }
+}

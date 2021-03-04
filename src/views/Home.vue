@@ -1,16 +1,18 @@
 <template>
   <div class="main">
-    <Nav />
-    <Hero />
+    <div class="hero-wrapper">
+      <Nav />
+      <Hero />
+    </div>
     <div class="bg-light">
       <div class="container">
-        <div class="pt-6 pb-6">
-          <h2 class="title is-fox has-text-centered">Az időd drága</h2>
-          <div class="columns is-centered">
-            <div class="column is-three-fifths">
-              <p class="lead-text has-text-centered">
-                Töltsd fel a felvételeidet, amiket egy kiránduláson, nászúton, vagy bármilyen számodra fontos eseményen készítettél!
-                <br /><strong>Majd dőlj hátra és lazíts, miközben készül a menő videód!</strong>
+        <div class="pt-max pb-max">
+          <h2 class="title is-primary">Az időd drága</h2>
+          <div class="columns">
+            <div class="column is-half is-desktop">
+              <p class="lead-text">
+                Töltsd fel azokat a videókat, amiket egy kiránduláson, nászúton, vagy bármilyen más, számodra fontos eseményen készítettél!
+                <strong>Majd dőlj hátra és lazíts, miközben készül a menő videód!</strong>
               </p>
             </div>
           </div>
@@ -19,9 +21,7 @@
     </div>
     <FourStep />
     <Vimeo />
-
     <Footer />
-
   </div>
 </template>
 
@@ -39,3 +39,8 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+
+
+</style>

@@ -1,0 +1,56 @@
+.main {
+  .button {
+    font-family: Jaldi;
+    font-weight: 700;
+    border-radius: 56px;
+    color: $white;
+    //text-transform: uppercase;
+
+
+    &.is-primary {
+      background-color: $primary;
+      &.is-outline {
+        color: $primary;
+        &:hover {
+          background-color: transparent;
+          color: darken( $primary, 10% )!important;
+          border-color: darken( $primary, 10% )!important;
+        }
+      }
+      &:hover {
+        background-color: darken( $primary, 10% );
+      }
+    }
+    &.is-secondary {
+      background-color: $secondary;
+      border-color: $secondary!important;
+      &.is-outline {
+        color: $secondary;
+        &:hover {
+          background-color: transparent;
+          color: darken( $secondary, 10% )!important;
+          border-color: darken( $secondary, 10% )!important;
+        }
+      }
+      &:hover {
+        background-color: darken( $secondary, 10% );
+      }
+    }
+
+    &.is-outline {
+      background-color: transparent;
+      border: 2px solid;
+    }
+
+    &.is-large {
+      font-size: 1.5rem;
+      padding: 1.5rem 2rem;
+    }
+
+    &.is-medium {
+      font-size: 1.25rem;
+      padding: 0 2rem;
+    }
+
+  }
+}

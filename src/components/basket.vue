@@ -1,7 +1,7 @@
 <template>
   <div class="navbar-item">
     <div class="buttons" @click="showBasket=!showBasket">
-      <a class="button is-secondary empty">
+      <a class="button is-outline empty basket-button">
         <span class="icon">
           <img src="../assets/svg/icon-shopping-bag.svg" />
         </span>

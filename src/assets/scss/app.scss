@@ -4,10 +4,13 @@
 @import 'variables';
 @import 'fonts';
 
-@import 'admin';
+//@import 'admin';
 
-@import 'main';
-@import 'components/products';
+//@import 'main';
+//@import 'components/products';
 
+@import 'components/layout';
+@import 'components/titles';
 @import 'components/nav';
+@import 'components/buttons';
 @import 'components/hero';

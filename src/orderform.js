@@ -30,10 +30,12 @@ export const orderForm = [{
   items: [{
     active: true,
     name: 'Személyes Videó',
+    icon: 'face',
     image: require('@/assets/svg/personal.svg')
   },{
     active: false,
     name: 'Céges Videó',
+    icon: 'maps_home_work',
     image: require('@/assets/svg/business.svg')
   }]
 },{

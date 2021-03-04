@@ -1,6 +1,4 @@
-html, body {
 
-}
 
 .four-step-bg {
   width: 100%;
@@ -10,96 +8,18 @@ html, body {
   z-index: 0;
 }
 
-.bg-light {
-  background-color: #FAF8F6!important;
-}
+
 
 #app {
   .main {
-    background-color: #F5EEE7;
-    font-family: Oxygen;
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 
-    .separator-line {
-      height: 2px;
-      background: $primary;
-    }
 
-    hr {
-      background: url('/svg/content_separator.svg');
-      background-repeat: no-repeat;
-      background-position: center;
-      height: $size;
-      margin-top: 0;
-      opacity: 0.5;
 
-      &.simple {
-        height: 1px;
-        background: $darker;
-        opacity: 0.1;
-      }
-    }
 
-    .lead-text {
-      color: $darker;
-      font-size: $text-size-lead;
-      line-height: $text-height-lead;
-      strong{
-        font-weight: 700;
-      }
-    }
 
-    .bread-text {
-      color: $darker;
-      font-size: 1rem;
-      line-height: 1.5rem;
-    }
 
-    .title {
-      font-family: Raleway;
-      font-weight: 800;
-      color: $darker;
-      flex-direction: row;
 
-      &.is-fox {
-        color: $primary;
-      }
 
-      &.has-secondary-color {
-        color: $secondary;
-      }
-
-      &.is-primary {
-        text-transform: uppercase;
-        font-size: $text-size-title-primary;
-        line-height: $text-height-title-primary;
-      }
-
-      &.is-secondary {
-        text-transform: none;
-        font-size: $text-size-title-secondary;
-        line-height: $text-height-title-secondary;
-        font-weight: 700;
-      }
-
-      &.subtitle {
-        font-size: 1rem;
-        font-weight: 600;
-      }
-
-    }
-
-    .vcenter {
-      display: flex;
-      align-items: center;
-    }
-
-    .hcenter {
-      display: flex;
-      justify-content: center;
-    }
 
     .four-step {
       .fourstep-block {
@@ -109,22 +29,9 @@ html, body {
         height: 100%;
         min-height: 100%;
         box-shadow: $main-shadow;
-
-        .title {
-          color: $dark;
-        }
       }
     }
 
-    .memo, .fox {
-      font-family: Raleway;
-      font-weight: 800;
-      text-transform: uppercase;
-    }
-
-    .fox {
-      color: $primary;
-    }
 
     .player-block {
       height: $hero-height;
@@ -149,7 +56,7 @@ html, body {
       }
 
       .hero {
-        .hero-body{
+        .hero-body {
           padding: 0;
           display: flex;
           align-items: center;
@@ -167,64 +74,7 @@ html, body {
       }
     }
 
-    .button {
-      font-family: Raleway;
-      font-weight: 700;
-      border-radius: 56px;
-      color: $white;
-      //text-transform: uppercase;
-      font-size: 1rem;
 
-      &.is-primary {
-        background-color: $primary;
-        &.is-outline {
-          color: $primary;
-          &:hover {
-            background-color: transparent;
-            color: darken( $primary, 10% )!important;
-            border-color: darken( $primary, 10% )!important;
-          }
-        }
-        &:hover {
-          background-color: darken( $primary, 10% );
-        }
-      }
-      &.is-secondary {
-        background-color: $secondary;
-        border-color: $secondary!important;
-        &.is-outline {
-          color: $secondary;
-          &:hover {
-            background-color: transparent;
-            color: darken( $secondary, 10% )!important;
-            border-color: darken( $secondary, 10% )!important;
-          }
-        }
-        &:hover {
-          background-color: darken( $secondary, 10% );
-        }
-      }
-
-      &.is-outline {
-        background-color: transparent;
-        border: 2px solid;
-      }
-
-      &.is-large {
-        padding: 1.5rem 2rem;
-      }
-
-      &.is-medium {
-        padding-left: 2rem;
-        padding-right: 2rem;
-        font-size: 1rem;
-      }
-
-    }
-
-    .footer {
-      background-color: darken( $secondary, 30% );
-    }
 
   }
 

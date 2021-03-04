@@ -9,20 +9,54 @@ $rounded-normal : $space * 2;
 $rounded-small  : $space;
 
 $mobile-size    : 768px;
-$hero-height    : 522px;
+$hero-height    : 560px;
 $header-height  : 3.25rem;
 
 $aside-width : 12rem;
 
-$text-size-title-primary: 1.75rem;
-$text-size-title-secondary: 1.5rem;
-$text-height-title-primary: 2.5rem;
-$text-height-title-secondary: 2rem;
+$text-size-title-primary: 2.5rem;
+$text-height-title-primary: 3rem;
+$text-size-title-secondary: 2rem;
+$text-height-title-secondary: 2.5rem;
 
-$text-size-lead: 1.125rem;
+$text-size-lead: 1.25rem;
 $text-height-lead: 1.75rem;
 
 $main-shadow: 0px 4px 1rem rgba(0,0,0,0.1);
+
+$mobileSize       : 768px;
+$tabletSize       : 769px;
+$desktopSize      : 1024px;
+$widescreenSize   : 1216px;
+$fullhdSize       : 1408px;
+
+// Mobile size
+@media screen and (max-width: $mobileSize) {
+  .is-primary {
+    //background-color: red;
+  }
+}
+
+// tablet size
+@media screen and (min-width: $tabletSize) {
+  .is-primary {
+    //background-color: green;
+  }
+}
+
+@media screen and (min-width: $desktopSize) {
+  .is-primary {
+    //background-color: blue;
+  }
+}
+
+@media screen and (min-width: $fullhdSize) {
+  .is-primary {
+    //background-color: pink;
+  }
+}
+
+
 
 
 
