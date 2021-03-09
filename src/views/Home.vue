@@ -7,20 +7,24 @@
     <div class="bg-light">
       <div class="container">
         <div class="pt-max pb-max">
-          <h2 class="title is-primary">Az időd drága</h2>
+          <h2 class="title is-secondary">Mindenkinek van kamerája</h2>
           <div class="columns">
             <div class="column is-half is-desktop">
               <p class="lead-text">
-                Töltsd fel azokat a videókat, amiket egy kiránduláson, nászúton, vagy bármilyen más, számodra fontos eseményen készítettél!
-                <strong>Majd dőlj hátra és lazíts, miközben készül a menő videód!</strong>
+                <span class="is-strong">A kérdés az, hogy mit kezdesz azzal a számtalan felvétellel, amelyeket a fontos eseményeiden készítettél?</span> <span class="is-strong is-color-primary">Bízd ránk!</span>
+                A feltöltött videóidat egy hangulatos klippé varázsoljuk, amely igazi audiovizuális filmélmény lesz a néző számára.
+                Hangulatos zenével, a legjobb pillanatok kiemelésével egy maximálisan testre szabott kisfilmet kapsz, amellyel újra átélheted és megoszthatod barátaiddal az izgalmas kalandodat.
               </p>
             </div>
           </div>
         </div>
       </div>
     </div>
+
     <FourStep />
     <Vimeo />
+    <SkillRef />
+
     <Footer />
   </div>
 </template>
@@ -31,11 +35,12 @@ import Nav from "@/components/nav"
 import Hero from "@/components/hero"
 import FourStep from "@/components/fourStep"
 import Vimeo from "@/components/videoHeroSimple"
+import SkillRef from "@/components/skillReference"
 import Footer from "@/components/footer"
 
 export default {
   components: {
-    Nav, Hero, FourStep, Vimeo, Footer
+    Nav, Hero, FourStep, Vimeo, SkillRef, Footer
   }
 }
 </script>

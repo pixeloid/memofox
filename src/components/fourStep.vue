@@ -2,14 +2,19 @@
   <div class="four-step-bg pt-6 pb-6">
     <div class="container">
       <div class="four-step">
-        <h2 class="title is-primary has-text-centered mb-6">
-          Hogyan működik?
+        <h2 class="title is-primary has-text-centered">
+          Az időd drága
         </h2>
+        <div class="columns mb-6">
+          <div class="column is-three-fifths is-offset-one-fifth has-text-centered">
+            <p class="lead-text">Dőlj hátra és lazíts, miközben felejthetetlen videót készítünk Neked!</p>
+          </div>
+        </div>
         <div class="columns is-multiline mb-6">
           <div class="column is-one-quarter-desktop is-half-tablet pb-4">
             <div class="fourstep-block has-text-centered">
               <img src="../assets/svg/fourstep-one.svg" alt="">
-              <h2 class="title is-secondary hcenter vcenter">
+              <h2 class="title is-tertiary hcenter vcenter">
                 1. Rendeld meg!
               </h2>
               <p class="lead-text has-text-centered">
@@ -20,7 +25,7 @@
           <div class="column is-one-quarter-desktop is-half-tablet pb-4">
             <div class="fourstep-block has-text-centered">
               <img src="../assets/svg/fourstep-two.svg" alt="">
-              <h2 class="title is-secondary hcenter vcenter">
+              <h2 class="title is-tertiary hcenter vcenter">
                 2. Tedd Egyedivé!
               </h2>
               <p class="lead-text has-text-centered">
@@ -31,7 +36,7 @@
           <div class="column is-one-quarter-desktop is-half-tablet pb-4">
             <div class="fourstep-block has-text-centered">
               <img src="../assets/svg/fourstep-three.svg" alt="">
-              <h2 class="title is-secondary hcenter vcenter">
+              <h2 class="title is-tertiary hcenter vcenter">
                 3. Töltsd fel!
               </h2>
               <p class="lead-text has-text-centered">
@@ -42,7 +47,7 @@
           <div class="column is-one-quarter-desktop is-half-tablet pb-4">
             <div class="fourstep-block has-text-centered">
               <img src="../assets/svg/fourstep-four.svg" alt="">
-              <h2 class="title is-secondary hcenter vcenter">
+              <h2 class="title is-tertiary hcenter vcenter">
                 4. Ünnepelj!
               </h2>
               <p class="lead-text has-text-centered">

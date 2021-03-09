@@ -14,21 +14,18 @@
     }
 
     &.is-primary {
-      //text-transform: uppercase;
-      font-size: $text-size-title-primary;
-      line-height: $text-height-title-primary;
+      font-size: 2.5rem;
+      line-height: 3rem;
     }
 
     &.is-secondary {
-      text-transform: none;
-      font-size: $text-size-title-secondary;
-      line-height: $text-height-title-secondary;
-      font-weight: 700;
+      font-size: 2rem;
+      line-height: 2.5rem;
     }
 
-    &.subtitle {
-      font-size: 1rem;
-      font-weight: 600;
+    &.is-tertiary {
+      font-size: 1.75rem;
+      line-height: 2.25rem;
     }
 
   }
