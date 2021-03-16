@@ -1,9 +1,8 @@
 <template>
   <div class="main">
-    <div class="hero-wrapper">
-      <Nav />
-      <Hero />
-    </div>
+    <Nav />
+    <Hero />
+
     <div class="bg-light">
       <div class="container">
         <div class="pt-max pb-max">

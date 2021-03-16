@@ -1,6 +1,5 @@
 .main {
-  //background-color: $bg-light;
-  background-color: #F8F6F3;
+  background-color: $lighter;
 
   font-family: Jaldi;
   font-weight: 400;
@@ -57,7 +56,7 @@
 
   .separator-line {
     height: 1px;
-    background: $darker;
+    background: $dark;
   }
 
   hr {
@@ -70,23 +69,23 @@
 
     &.simple {
       height: 1px;
-      background: $darker;
+      background: $dark;
       opacity: 0.1;
     }
   }
 
   .lead-text {
-    color: $darker;
+    color: $dark;
     font-size: $text-size-lead;
     line-height: $text-height-lead;
     strong{
-      color: $darker;
+      color: $dark;
       font-weight: 700;
     }
   }
 
   .bread-text {
-    color: $darker;
+    color: $dark;
     font-size: 1rem;
     line-height: 1.5rem;
   }
@@ -103,7 +102,7 @@
     background-position: center right;
     background-size: cover;
     background-repeat: no-repeat;
-    //background-color: #FAF8F6!important;
+
     &:before {
       content: '';
       display: block;
@@ -112,10 +111,10 @@
       right: 0;
       top: 0;
       bottom: 0;
-      background: rgb(249,248,246);
-      background: -webkit-linear-gradient(left, rgba(249,248,246,0.96) 0%, rgba(249,248,246,0.8) 50%, rgba(249,248,246,0) 100%);
-      background: -o-linear-gradient(left, rgba(249,248,246,0.96) 0%, rgba(249,248,246,0.8) 50%, rgba(249,248,246,0) 100%);
-      background: linear-gradient(to right, rgba(249,248,246,0.96) 0%, rgba(249,248,246,0.8) 50%, rgba(249,248,246,0) 100%);
+      background: rgb(255,255,255);
+      background: -webkit-linear-gradient(left, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.8981967787114846) 30%, rgba(255,255,255,0.6993172268907564) 40%, rgba(255,255,255,0) 60%);
+      background: -o-linear-gradient(left, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.8981967787114846) 30%, rgba(255,255,255,0.6993172268907564) 40%, rgba(255,255,255,0) 60%);
+      background: linear-gradient(to right, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.8981967787114846) 30%, rgba(255,255,255,0.6993172268907564) 40%, rgba(255,255,255,0) 60%);
     }
   }
 
@@ -125,7 +124,8 @@
       //background: -webkit-linear-gradient(267deg, rgba(236,204,202,1) 0%, rgba(250,233,232,1) 100%);
       //background: -o-linear-gradient(267deg, rgba(236,204,202,1) 0%, rgba(250,233,232,1) 100%);
       //background: linear-gradient(357deg, rgba(236,204,202,1) 0%, rgba(250,233,232,1) 100%);
-      background-color: $light;
+      //background-color: $lighter;
+
       background-image: url('~@/assets/svg/mountains-background.svg');
       background-repeat: no-repeat;
       background-size: cover;

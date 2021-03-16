@@ -1,6 +1,7 @@
 .hero-wrapper {
   height: $hero-height;
-  background-color: $darker;
+  background-color: $dark;
+  position: relative;
 }
 
 .hero.is-memofox-hero {
@@ -11,7 +12,8 @@
 }
 
 .hero-title-wrapper {
-  background: rgba(249,248,246,0.96);
+  margin-top: 1rem;
+  background: rgba(249,248,246,0.90);
   padding: 2rem;
   border-radius: 3px;
   box-shadow: $box-shadow;

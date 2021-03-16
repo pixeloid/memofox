@@ -1,18 +1,12 @@
 .main {
   .title {
     font-family: Sora;
-    //font-family: 'Red Hat Display';
     font-weight: 700;
-    color: $darker;
+    color: $secondary;
     flex-direction: row;
-
 
     &.is-fox {
       color: $primary;
-    }
-
-    &.has-secondary-color {
-      color: $secondary;
     }
 
     &.is-primary {
@@ -26,7 +20,6 @@
     }
 
     &.is-tertiary {
-      //font-weight: 700;
       font-size: $text-tertiary;
     }
 

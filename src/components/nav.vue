@@ -1,9 +1,10 @@
 <template>
-  <nav class="navbar boxed-shadow" role="navigation" aria-label="main navigation">
+  <nav class="navbar boxed-shadow is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="container">
       <div class="navbar-brand vcenter">
         <a class="navbar-item" href="/">
-          <img src="../assets/svg/memofox-logo-c-hor.svg" />
+          <img class="is-top" src="../assets/svg/memofox-logo-c-hor.svg" />
+          <img class="is-scrolled" src="../assets/svg/memofox-logo-w-hor.svg" />
         </a>
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
           <span aria-hidden="true"></span>
@@ -13,12 +14,12 @@
       </div>
       <div class="navbar-menu">
         <div class="navbar-end vcenter">
-  
+
             <router-link class="navbar-item" :to="{ name: 'Products', params: {} }">Szerezz egy videót!</router-link>
             <router-link class="navbar-item" :to="{ name: '', params: {} }">Blog</router-link>
             <router-link class="navbar-item" :to="{ name: '', params: {} }">Kapcsolat</router-link>
 
-          <Basket />
+            <Basket />
         </div>
       </div>
       </div>
@@ -34,7 +35,7 @@ export default {
   },
   data() {
     return {
-      //handleScroll: 0,
+      handleScroll: 0,
       windowScrollTop: 0,
     }
   },
@@ -43,9 +44,9 @@ export default {
       let header = document.querySelector(".navbar")
 
       if (window.scrollY > 16 && !header.className.includes('scrolled')) {
-        //header.classList.add('scrolled')
+        header.classList.add('scrolled')
       } else if (window.scrollY < 16) {
-        //header.classList.remove('scrolled')
+        header.classList.remove('scrolled')
       }
     }
   },
