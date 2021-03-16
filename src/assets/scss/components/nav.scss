@@ -23,15 +23,17 @@
     }
 
     .navbar-end {
+      position: relative;
 
       a.navbar-item, a.navbar-link {
         @include transition(all .15s ease-in-out 15ms);
         height: 2.5rem;
         color: $white;
-        font-weight: 700;
-        font-size: 1.250rem;
+        font-weight: 500;
+        font-size: 1rem;
         border-radius: $radius;
         margin-left: 0.75rem;
+        font-family: Sora;
 
         &:focus-within, &.is-active, &:focus {
           background-color: transparent;
@@ -40,47 +42,30 @@
           color: $primary;
           background-color: $white;
         }
-      }
 
-    }
+        &.basket-button {
+          font-size: 1rem;
+          color: white;
+          font-weight: 500;
+          span {
+            margin: 0;
+            span {
+              // darabszam
+              margin-left: 8px;
+            }
+          }
 
-    .buttons {
-      margin-bottom: 0;
-      .basket-button {
-        margin-bottom: 0;
-        padding-left: 1.75rem;
-        font-size: 1rem;
-        color: white;
-        &.is-active {
-          background-color: $secondary;
-          &.is-outline {
-            border-color: $secondary;
+          &.is-active {
+            color: $white;
+            background: $secondary;
+          }
+          &:hover {
+            color: $white;
+            background: $secondary;
           }
         }
-        &:hover {
-          background-color: $secondary;
-          &.is-outline {
-            border-color: $secondary;
-          }
-        }
       }
     }
-
-    .navbar-brand {
-      // margin-left: 0;
-      .navbar-item {
-        //padding: 0
-      }
-    }
-    .navbar-end {
-      .navbar-item:last-child{
-        // padding-right: 0;
-      }
-    }
-  }
-
-  .navbar-end {
-    position: relative;
   }
 
 }
@@ -114,7 +99,7 @@
         margin-right: $space;
       }
       .title-text {
-        font-family: Raleway;
+        font-family: Sora;
         font-size: 1.5rem;
         text-transform: uppercase;
         font-weight: 700;
@@ -163,7 +148,7 @@
         padding: 0 1rem;
 
         .item-category {
-          font-family: Raleway;
+          font-family: Sora;
           text-transform: uppercase;
           font-weight: 800;
         }

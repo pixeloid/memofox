@@ -13,9 +13,11 @@
       </div>
       <div class="navbar-menu">
         <div class="navbar-end vcenter">
-          <router-link class="navbar-item" :to="{ name: 'Products', params: {} }">Szerezz egy videót!</router-link>
-          <router-link class="navbar-item" :to="{ name: '', params: {} }">Blog</router-link>
-          <router-link class="navbar-item" :to="{ name: '', params: {} }">Kapcsolat</router-link>
+  
+            <router-link class="navbar-item" :to="{ name: 'Products', params: {} }">Szerezz egy videót!</router-link>
+            <router-link class="navbar-item" :to="{ name: '', params: {} }">Blog</router-link>
+            <router-link class="navbar-item" :to="{ name: '', params: {} }">Kapcsolat</router-link>
+
           <Basket />
         </div>
       </div>

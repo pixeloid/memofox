@@ -21,12 +21,8 @@
                 Készen állsz a kalandra? Egészen idáig utaztál, így itt az ideje, hogy találkozz a <span class="memo">Memo</span><span class="fox">Fox</span> Videószerkesztő szolgáltatásával.
               </p>
               <div class="vcenter hero-button-wrapper">
-                <router-link class="button is-primary is-medium" :to="{ name: 'Products', params: {} }">Szerezz egy videót</router-link>
-                <span>vagy</span>
-                <a class="button is-tertiary" href="#">
-                  <span>ismerd meg jobban</span>
-                  <span class="icon material-icons">south</span>
-                </a>
+                <router-link class="button is-primary" :to="{ name: 'Products', params: {} }">Szerezz egy videót</router-link>
+                <a class="button is-secondary is-outline">Ismerd meg</a>
               </div>
             </div>
           </div>

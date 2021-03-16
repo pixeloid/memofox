@@ -1,15 +1,14 @@
 <template>
-  <div class="navbar-item">
-    <div class="buttons" @click="showBasket=!showBasket">
-      <a class="button is-outline empty basket-button" v-bind:class="{'is-active': showBasket}">
-        <span class="icon">
-          <img src="../assets/svg/icon-shopping-bag.svg" />
-        </span>
-        <span class="">
-          <span v-if="basketItemNumber != 0">{{ basketItemNumber }}</span>
-        </span>
-      </a>
-    </div>
+
+    <a class="basket-button navbar-item" v-bind:class="{'is-active': showBasket}" @click="showBasket=!showBasket">
+      <span class="icon">
+        <img src="../assets/svg/icon-shopping-bag.svg" />
+      </span>
+      <span class="">
+        <span v-if="basketItemNumber != 0">{{ basketItemNumber }}</span>
+      </span>
+    </a>
+
     <div class="basket-wrapper" v-if="showBasket" :style="{ height: basket.height+'px' }">
       <div class="basket-header">
         <div class="basket-title-wrapper">
@@ -64,7 +63,6 @@
 
       </div>
     </div>
-  </div>
 
 </template>
 
