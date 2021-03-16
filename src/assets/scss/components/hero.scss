@@ -17,6 +17,16 @@
   box-shadow: $box-shadow;
 }
 
+.hero-button-wrapper {
+  >span {
+    font-size: 1.25rem;
+    margin-left: 1.5rem;
+  }
+  .is-tertiary {
+    margin-left: 8px;
+  }
+}
+
 .hero-bg, .hero-bg-gradient  {
   position: absolute;
   top: 0;
@@ -26,7 +36,6 @@
   z-index: 0;
   height: $hero-height;
   overflow: hidden;
-
 
   .player-block {
     position: absolute;
@@ -44,7 +53,6 @@
   background: -webkit-linear-gradient(left, rgba(136,108,136,0.2) 0%, rgba(249,248,246,0.1) 40%, rgba(136,108,136,0) 80%, rgba(136,108,136,0.2) 100%);
   background: -o-linear-gradient(left, rgba(136,108,136,0.2) 0%, rgba(249,248,246,0.1) 40%, rgba(136,108,136,0) 80%, rgba(136,108,136,0.2) 100%);
   background: linear-gradient(to right, rgba(136,108,136,0.2) 0%, rgba(249,248,246,0.1) 40%, rgba(136,108,136,0) 80%, rgba(136,108,136,0.2) 100%);
-
 
   // Regi hatter gradiens.
   /*

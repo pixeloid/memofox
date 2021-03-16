@@ -1,6 +1,6 @@
 <template>
   <div class="hero-bg">
-    <VimeoPlayerke v-bind:id="517867006" />
+    <VimeoPlayer v-bind:id="517867006" />
   </div>
   <div class="hero-bg-gradient"></div>
   <div class="container">
@@ -20,7 +20,14 @@
               <p class="lead-text mb-5">
                 Készen állsz a kalandra? Egészen idáig utaztál, így itt az ideje, hogy találkozz a <span class="memo">Memo</span><span class="fox">Fox</span> Videószerkesztő szolgáltatásával.
               </p>
-              <router-link class="button is-primary is-medium" :to="{ name: 'Products', params: {} }">Szerezz egy videót</router-link>
+              <div class="vcenter hero-button-wrapper">
+                <router-link class="button is-primary is-medium" :to="{ name: 'Products', params: {} }">Szerezz egy videót</router-link>
+                <span>vagy</span>
+                <a class="button is-tertiary" href="#">
+                  <span>ismerd meg jobban</span>
+                  <span class="icon material-icons">south</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -30,11 +37,11 @@
 </template>
 
 <script>
-import VimeoPlayerke from "@/components/vimeoPlayer"
+import VimeoPlayer from "@/components/vimeoPlayer"
 
 export default {
   components: {
-    VimeoPlayerke
+    VimeoPlayer
   }
 }
 </script>

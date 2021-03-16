@@ -1,12 +1,12 @@
 <template>
   <div class="navbar-item">
     <div class="buttons" @click="showBasket=!showBasket">
-      <a class="button is-outline empty basket-button">
+      <a class="button is-outline empty basket-button" v-bind:class="{'is-active': showBasket}">
         <span class="icon">
           <img src="../assets/svg/icon-shopping-bag.svg" />
         </span>
         <span class="">
-          <span v-if="basketItemNumber != 0">{{basketItemNumber}}</span>
+          <span v-if="basketItemNumber != 0">{{ basketItemNumber }}</span>
         </span>
       </a>
     </div>
@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="basket-info">
-        Jelenleg {{basketItemNumber}} db elem van a kosárban.
+        Jelenleg {{ basketItemNumber }} db elem van a kosárban.
       </div>
       <div class="basket-item-wrapper">
 

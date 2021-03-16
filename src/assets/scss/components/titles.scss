@@ -1,9 +1,10 @@
 .main {
   .title {
-    font-family: Jaldi;
-    font-weight: 700;
+    font-family: 'Red Hat Display';
+    font-weight: 800;
     color: $darker;
     flex-direction: row;
+
 
     &.is-fox {
       color: $primary;
@@ -14,37 +15,34 @@
     }
 
     &.is-primary {
-      font-size: 2.5rem;
-      line-height: 3rem;
-    }
-
-    &.is-secondary {
       font-size: 2rem;
       line-height: 2.5rem;
     }
 
-    &.is-tertiary {
+    &.is-secondary {
       font-size: 1.75rem;
       line-height: 2.25rem;
+    }
+
+    &.is-tertiary {
+      font-weight: 700;
+      font-size: 1.5rem;
     }
 
   }
   @media screen and (max-width: $mobileSize) {
     .title.is-primary {
       font-size: $text-size-title-secondary;
-      line-height: $text-height-title-secondary;
     }
   }
   @media screen and (min-width: $tabletSize) {
     .title.is-primary {
       font-size: $text-size-title-secondary;
-      line-height: $text-height-title-secondary;
     }
   }
   @media screen and (min-width: $desktopSize) {
     .title.is-primary {
       font-size: $text-size-title-primary;
-      line-height: $text-height-title-primary;
     }
   }
 }
