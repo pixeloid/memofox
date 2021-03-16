@@ -22,9 +22,8 @@
     </div>
 
     <FourStep />
-    <Vimeo />
     <SkillRef />
-
+    <Vimeo />
     <Footer />
   </div>
 </template>

@@ -1,6 +1,6 @@
 .hero-wrapper {
   height: $hero-height;
-  background-color: darken($light, 24);
+  background-color: $darker;
 }
 
 .hero.is-memofox-hero {
