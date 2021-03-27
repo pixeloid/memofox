@@ -10,7 +10,7 @@
           <div class="columns">
             <div class="column is-half is-desktop">
               <p class="lead-text">
-                <span class="is-strong">A kérdés az, hogy mit kezdesz azzal a számtalan felvétellel, amelyeket a fontos eseményeiden készítettél?</span> <span class="is-strong is-color-primary">Bízd ránk!</span>
+                A kérdés az, hogy mit kezdesz azzal a számtalan felvétellel, amelyeket a fontos eseményeiden készítettél? <span class="is-strong">Bízd ránk!</span>
                 A feltöltött videóidat egy hangulatos klippé varázsoljuk, amely igazi audiovizuális filmélmény lesz a néző számára.
                 Hangulatos zenével, a legjobb pillanatok kiemelésével egy maximálisan testre szabott kisfilmet kapsz, amellyel újra átélheted és megoszthatod barátaiddal az izgalmas kalandodat.
               </p>

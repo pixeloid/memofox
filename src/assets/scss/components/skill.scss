@@ -1,0 +1,32 @@
+.main {
+  .skill-background {
+    //background: url('~@/assets/image/Video-editing-timeline-779597.jpg');
+    background: url('~@/assets/image/Video-editing-timeline-779593.jpg');
+    background-repeat: no-repeat;
+    background-position: center -250px;
+    background-size: cover;
+  }
+  .skill-wrapper {
+    padding: 1.5rem;
+    border: 1px solid $light;
+    background-color: $lighter;
+    border-radius: $radius;
+    box-shadow: $box-shadow;
+
+    .columns {
+      margin: 0;
+      .column {
+        padding: 0.5rem;
+      }
+    }
+
+    .skill-block {
+      box-shadow: $box-shadow;
+      border: 1px solid $light;
+      min-height: 100%;
+      border-radius: $radius;
+      padding: 1rem;
+    }
+
+  }
+}

@@ -173,7 +173,7 @@ main.admin {
 
   &.has-aside-right {
     aside.is-placed-right {
-      height: calc(100vh - $header-height);
+      //height: calc(100vh - $header-height);
       @include transition(right .25s ease-in-out 50ms);
       width: $aside-width;
       right: -$aside-width;

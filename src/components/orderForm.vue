@@ -1,27 +1,64 @@
 <template>
   <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-three-quarters">
-        <h2 class="title is-secondary has-text-centered">
-          Az igénylőlap kitöltése után kiszámítjuk<br/>Neked az egyéni árat.
-        </h2>
-        <div class="order-form">
-          <div class="mb-4">
+    <div class="content-on-hero pt-6">
+      <div class="columns is-centered">
+        <div class="column is-three-quarters">
+          <h2 class="title is-secondary has-text-centered">
+            Az igénylőlap kitöltése után kiszámítjuk<br/>Neked az egyéni árat.
+          </h2>
+          <div class="order-form">
+            <div class="mb-4">
 
-            <p class="subtitle vcenter">
-              <span class="order-sort-numb hcenter vcenter">{{ orderPageNumber + 1 }}</span>
-              <span>{{ itemWrapper[orderPageNumber].title }}</span>
-            </p>
+              <p class="title is-tertiary vcenter">
+                <span class="order-sort-numb hcenter vcenter">{{ orderPageNumber + 1 }}</span>
+                <span>{{ itemWrapper[orderPageNumber].title }}</span>
+              </p>
 
-            <hr class="simple" />
+              <hr class="simple" />
 
-            <div class="" v-if="itemWrapper[orderPageNumber].last">
-              <form class="form">
-                <div v-for='(item, i) in itemWrapper[orderPageNumber].items' :key='i'>
-                  <p class="pb-4">{{item.name}}</p>
-                  <div class="field">
-                    <div class="control is-medium">
-                      <input class="input is-medium" type="email" required v-model="emailAddress" placeholder="Add meg az e-mail címed!">
+              <div class="" v-if="itemWrapper[orderPageNumber].last">
+                <form class="form">
+                  <div v-for='(item, i) in itemWrapper[orderPageNumber].items' :key='i'>
+                    <p class="pb-4">{{item.name}}</p>
+                    <div class="field">
+                      <div class="control is-medium">
+                        <input class="input is-medium" type="email" required v-model="emailAddress" placeholder="Add meg az e-mail címed!">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="columns order-buttons">
+                    <div class="column vcenter">
+                      <button v-if="backButton" type="button" class="button is-secondary is-outline" @click="backStep">
+                        <span class="material-icons-round">fast_rewind</span>
+                      </button>
+                    </div>
+                    <div class="column has-text-right">
+                      <button type="button" class="button is-secondary" @click="lastStep">
+                        <span>A végösszeg kiszámítása</span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="" v-else>
+                <div class="columns is-multiline is-variable is-1 item-wrapper">
+                  <div v-for='(item, i) in itemWrapper[orderPageNumber].items' :key='i' class="column" v-bind:class="{'is-half': !itemWrapper[orderPageNumber].amount,'is-one-fifth': itemWrapper[orderPageNumber].amount }">
+                    <div class="item-box vcenter" @click="itemClick(i)" v-bind:class="{'is-active': item.active, 'is-info': item.info}">
+                      <div v-if="item.info && item.info.highlight" class="item-highlight">
+                        {{ item.info.message }}
+                      </div>
+                      <span class="item-image" v-if="!item.info">
+                        <img :src="item.image" />
+                      </span>
+                      <p class="name hcenter">
+                        {{ item.name }}
+                      </p>
+                      <ul v-if="item.info" class="item-info" v-bind:class="{'is-epic': item.info && !item.info.highlight}">
+                        <li class="hcenter" v-for="(d, index) in item.info.desc" :key="index">
+                          {{ d }}
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -33,58 +70,18 @@
                     </button>
                   </div>
                   <div class="column has-text-right">
-                    <button type="button" class="button is-primary is-large" @click="lastStep">
-                      <span>A végösszeg kiszámítása</span>
+                    <button type="button" class="button is-secondary" @click="nextStep">
+                      <span>Következő</span>
+                      <span class="icon material-icons-round">fast_forward</span>
                     </button>
                   </div>
                 </div>
-              </form>
-            </div>
-            <div class="" v-else>
-              <div class="columns is-multiline is-variable is-1 item-wrapper">
-                <div v-for='(item, i) in itemWrapper[orderPageNumber].items' :key='i' class="column" v-bind:class="{'is-half': !itemWrapper[orderPageNumber].amount,'is-one-fifth': itemWrapper[orderPageNumber].amount }">
-                  <div class="item-box vcenter" @click="itemClick(i)" v-bind:class="{'is-active': item.active, 'is-info': item.info}">
-                    <div v-if="item.info && item.info.highlight" class="item-highlight">
-                      {{ item.info.message }}
-                    </div>
-                    <span class="item-image" v-if="!item.info">
-                      <img :src="item.image" />
-                    </span>
-                    <p class="name hcenter">
-                      {{ item.name }}
-                    </p>
-                    <ul v-if="item.info" class="item-info" v-bind:class="{'is-epic': item.info && !item.info.highlight}">
-                      <li class="hcenter" v-for="(d, index) in item.info.desc" :key="index">
-                        {{ d }}
-                      </li>
-                    </ul>
-                  </div>
-                </div>
               </div>
-
-              <div class="columns order-buttons">
-                <div class="column vcenter">
-                  <button v-if="backButton" type="button" class="button is-secondary is-outline" @click="backStep">
-                    <span class="material-icons-round">fast_rewind</span>
-                  </button>
-                </div>
-                <div class="column has-text-right">
-                  <button type="button" class="button is-primary is-large" @click="nextStep">
-                    <span>Következő</span>
-                    <span class="icon material-icons-round">fast_forward</span>
-                  </button>
-                </div>
-              </div>
-
-
             </div>
-
           </div>
-
-
-
         </div>
       </div>
+
     </div>
   </div>
 </template>

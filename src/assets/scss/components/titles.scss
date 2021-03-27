@@ -9,6 +9,10 @@
       color: $primary;
     }
 
+    &.is-light {
+      color: $lighter;
+    }
+
     &.is-primary {
       font-size: $text-primary;
       line-height: 2.5rem;
