@@ -62,8 +62,9 @@
             <ul class="menu-list">
               <li><router-link :to="{ name: 'Secret', params: {} }">Dashboard</router-link></li>
               <li><router-link :to="{ name: 'Overview', params: {} }">Overview</router-link></li>
-              <li><router-link :to="{ name: 'secretProducts', params: {} }">Products</router-link></li>
-              <li><router-link :to="{ name: 'Orders', params: {} }">Orders</router-link></li>
+              <li><router-link :to="{ name: 'secretCategories', params: {} }">Termék kategóriák</router-link></li>
+              <li><router-link :to="{ name: 'secretProducts', params: {} }">Termékek</router-link></li>
+              <li><router-link :to="{ name: 'Orders', params: {} }">Megrendelések</router-link></li>
             </ul>
           </div>
         </div>

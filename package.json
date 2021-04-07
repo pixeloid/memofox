@@ -12,7 +12,9 @@
     "firebase": "^8.2.7",
     "material-ui": "^1.0.0-beta.47",
     "vue": "^3.0.0",
-    "vue-router": "^4.0.0-0"
+    "vue-router": "^4.0.0-0",
+    "vue-slider-component": "^4.0.0-beta.3",
+    "vue-table-component": "^1.9.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-eslint": "~4.5.0",

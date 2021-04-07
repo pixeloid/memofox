@@ -1,3 +1,8 @@
+
+/*
+
+// Mar nem ezt hasznalom - main.js-ben van
+
 import firebase from 'firebase';
 
 var firebaseConfig = {
@@ -13,3 +18,5 @@ var firebaseConfig = {
 // Initialize Firebase
 export const fb = firebase.initializeApp(firebaseConfig);
 //firebase.analytics();
+
+*/
