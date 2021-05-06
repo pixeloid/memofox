@@ -21,6 +21,7 @@
               <tr>
                 <th>Termék neve</th>
                 <th>Kategória</th>
+                <th>Leírás</th>
                 <th>Ár</th>
                 <th> <input type="text" class="input"
                  placeholder="Filter by department or employee"
@@ -34,6 +35,7 @@
               <tr v-for="product in filteredRows">
                 <td>{{ product.data().name }}</td>
                 <td>{{ getCategoryName(product.data().category) }}</td>
+                <td>{{ product.data().desc }}</td>
                 <td>{{ product.data().price }}</td>
                 <td>
                   <div class="has-text-right table-functions">
@@ -92,6 +94,12 @@
                 </div>
               </div>
               <div class="field">
+                <label class="label">Termék leírása</label>
+                <div class="control">
+                  <textarea class="textarea" v-model="product.desc" placeholder="Desc"></textarea>
+                </div>
+              </div>
+              <div class="field">
                 <label class="label">Termék ára</label>
                 <div class="control">
                   <input class="input" type="text" v-model="product.price" placeholder="Price">
@@ -137,6 +145,12 @@
                 </div>
               </div>
               <div class="field">
+                <label class="label">Termék leírása</label>
+                <div class="control">
+                  <editor class="editor" v-model="edit.product.desc" />
+                </div>
+              </div>
+              <div class="field">
                 <label class="label">Termék ára</label>
                 <div class="control">
                   <input class="input" type="text" v-model="edit.product.price" placeholder="Price">
@@ -156,18 +170,24 @@
 </template>
 
 <script>
+import Editor from './components/editor'
+
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 
 const db = firebase.firestore()
 
 export default {
+  components: {
+    Editor,
+  },
   name: 'Products',
   props: {
-    msg: String
+    msg: String,
   },
   data() {
     return {
+      editor: null,
       filter: '',
       addModal: false,
       editModal: false,
@@ -178,6 +198,7 @@ export default {
       product: {
         name: null,
         category: null,
+        desc: null,
         price: null
       },
       edit: {
@@ -185,6 +206,7 @@ export default {
         product: {
           name: null,
           category: null,
+          desc: null,
           price: null
         }
       }
@@ -225,6 +247,7 @@ export default {
         this.watcher()
         this.product.name = null
         this.product.category = null
+        this.product.desc = null
         this.product.price = null
       } catch(err) {
         console.error("Error adding document: ", err)
@@ -267,6 +290,7 @@ export default {
     },
     updateProduct(){
       this.isLoad = true
+
       var washingtonRef = db.collection("products").doc(this.edit.id);
       return washingtonRef.update(this.edit.product)
       .then(() => {
@@ -298,10 +322,10 @@ export default {
   },
   computed: {
     filteredRows() {
-
       return this.products.filter(product => {
         const name = product.data().name.toString().toLowerCase()
         const category = this.getCategoryName(product.data().category).toLowerCase()
+        const desc = product.data().desc.toString().toLowerCase()
         const price = product.data().price.toString().toLowerCase()
         const searchTerm = this.filter.toLowerCase()
 
@@ -310,6 +334,9 @@ export default {
         )
       })
     }
-  }
+  },
+
+
+
 }
 </script>

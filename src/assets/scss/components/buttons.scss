@@ -35,6 +35,14 @@
           color: darken( $secondary, 10% )!important;
           border-color: darken( $secondary, 10% )!important;
         }
+        &.is-inverse {
+          color: $light!important;
+          border-color: $light!important;
+          &:hover {
+            color: $white;
+            border-color: $white!important;
+          }
+        }
       }
       &:hover {
         color: $white;

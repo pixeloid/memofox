@@ -23,7 +23,7 @@
                 </p>
                 <div class="vcenter hero-button-wrapper">
                   <router-link class="button is-primary" :to="{ name: 'Products', params: {} }">Szerezz egy videót</router-link>
-                  <a class="button is-secondary is-outline">Ismerd meg</a>
+                  <a class="button is-secondary is-outline is-inverse">Ismerd meg</a>
                 </div>
               </div>
             </div>

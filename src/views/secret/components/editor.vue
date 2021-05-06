@@ -1,27 +1,34 @@
 <template>
-  <section class="section">
-    <h1 class="title">
-      Megrendelések
-    </h1>
-    <div>
-      <editor-content :editor="editor" />
-    </div>
-  </section>
+  <div class="">
+    <bubble-menu :editor="editor" v-if="editor">
+      <button @click="editor.chain().focus().toggleBold().run()" :class="{ 'is-active': editor.isActive('bold') }">
+        bold
+      </button>
+      <button @click="editor.chain().focus().toggleItalic().run()" :class="{ 'is-active': editor.isActive('italic') }">
+        italic
+      </button>
+      <button @click="editor.chain().focus().toggleStrike().run()" :class="{ 'is-active': editor.isActive('strike') }">
+        strike
+      </button>
+    </bubble-menu>
+    <editor-content :editor="editor" />
+  </div>
 </template>
 
 <script>
-import { Editor, EditorContent } from '@tiptap/vue-3'
+import { Editor, EditorContent, BubbleMenu } from '@tiptap/vue-3'
 import StarterKit from '@tiptap/starter-kit'
 
 export default {
   components: {
     EditorContent,
+    BubbleMenu
   },
 
   props: {
     modelValue: {
       type: String,
-      default: 'mjhgvfcd',
+      default: '',
     },
   },
 
@@ -53,8 +60,6 @@ export default {
         this.$emit('update:modelValue', this.editor.getHTML())
       },
     })
-
-
   },
 
   beforeUnmount() {

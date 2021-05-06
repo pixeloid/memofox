@@ -3,8 +3,8 @@
     <div class="container">
       <div class="navbar-brand vcenter">
         <a class="navbar-item" href="/">
-          <img class="is-top" src="../assets/svg/memofox-logo-c-hor.svg" />
           <img class="is-scrolled" src="../assets/svg/memofox-logo-w-hor.svg" />
+          <img class="is-top" src="../assets/svg/memofox-logo-w-hor.svg" />
         </a>
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
           <span aria-hidden="true"></span>
@@ -12,13 +12,14 @@
           <span aria-hidden="true"></span>
         </a>
       </div>
+
+      <div class="brand-background"></div>
+
       <div class="navbar-menu">
         <div class="navbar-end vcenter">
-
             <router-link class="navbar-item" :to="{ name: 'Products', params: {} }">Szerezz egy videót!</router-link>
             <router-link class="navbar-item" :to="{ name: '', params: {} }">Blog</router-link>
             <router-link class="navbar-item" :to="{ name: '', params: {} }">Kapcsolat</router-link>
-
             <Basket />
         </div>
       </div>

@@ -86,6 +86,10 @@
       color: $dark;
       font-weight: 700;
     }
+
+    &.is-light {
+      color: $light;
+    }
   }
 
   .bread-text {
@@ -149,7 +153,7 @@
 
   .four-step {
     &.columns {
-      margin: 0;
+      //margin: 0;
 
 
       //margin-left: -0.5rem;

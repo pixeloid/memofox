@@ -4,6 +4,37 @@
   justify-content: space-between;
 }
 
+.editor {
+
+  .ProseMirror {
+    background-color: white;
+    border-color: #dbdbdb;
+    border-radius: 4px;
+    color: #363636;
+    min-height: 2.5em;
+    align-items: center;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding-bottom: calc(0.5em - 1px);
+    padding-left: calc(0.75em - 1px);
+    padding-right: calc(0.75em - 1px);
+    padding-top: calc(0.5em - 1px);
+    position: relative;
+
+    &.ProseMirror-focused {
+      &:focus-visible {
+        outline: -webkit-focus-ring-color auto 0px;
+        outline-color: -webkit-focus-ring-color;
+        outline-style: auto;
+        outline-width: 0px;
+        border: 1px solid black;
+      }
+    }
+  }
+}
+
 .table {
   width: 100%;
   td {
@@ -154,6 +185,13 @@ main.admin {
     padding-right: $aside-width;
   }
 
+  input.input, .select select {
+    &:focus, &:active {
+      box-shadow: none;
+      border-color: black;
+    }
+  }
+
   .header-functions {
     display: flex;
     position: fixed;
@@ -175,6 +213,7 @@ main.admin {
       &:focus, &:active {
         border: none;
         box-shadow: none;
+        border-color: transparent;
       }
     }
   }

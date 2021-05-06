@@ -6,6 +6,7 @@
           <h2 class="title is-secondary has-text-centered">
             Az igénylőlap kitöltése után kiszámítjuk<br/>Neked az egyéni árat.
           </h2>
+
           <div class="order-form">
             <div class="mb-4">
 
@@ -16,27 +17,9 @@
 
               <hr class="simple" />
 
-              {{JSON.stringify([10,20,30,40])}}
-
               <div v-if="itemWrapper[orderPageNumber].amount">
                 <div class="">
-
-                  {{value}}
-
-                  <VueSlider
-
-                    ref="slider"
-                    v-model="value"
-
-                    v-bind:marks="true"
-                    :data="itemWrapper[5].items"
-                    :data-label="name"
-
-
-                  ></VueSlider>
-
-
-
+                  Slider
                 </div>
               </div>
 
@@ -114,37 +97,19 @@
 
 <script>
 import { orderForm } from '../orderform.js'
-import VueSlider from 'vue-slider-component'
-import 'vue-slider-component/theme/antd.css'
 
 export default {
   components: {
-    VueSlider
-  },
-  data() {
-    return {
 
+  },
+  data: function() {
+    return {
       slideData: [],
-      value: 0,
       orderPageNumber: 0,
       backButton: false,
       selectedItems: [],
       emailAddress: null,
       itemWrapper: orderForm,
-
-      options: {
-        dotSize: 16,
-        width: '100%',
-        height: 8,
-        contained: false,
-        dataLabel: 'label',
-        dataValue: 'value',
-        clickable: true,
-        tooltip: 'active',
-        marks: true,
-        process: true,
-      },
-
       //email validation
       reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/,
     }
@@ -204,19 +169,6 @@ export default {
 
   },
   created() {
-    data: [{
-      id: 1,
-      name: 'A',
-    }, {
-      id: 2,
-      name: 'B',
-    }, {
-      id: 3,
-      name: 'C',
-    }, {
-      id: 4,
-      name: 'D',
-    }]
 
     this.itemWrapper[5].items.forEach((item, i) => {
       this.slideData.push(item.name)

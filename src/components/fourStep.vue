@@ -2,7 +2,7 @@
   <div class="four-step-bg pt-6 pb-6">
     <div class="container">
 
-      <h2 class="title is-secondary">
+      <h2 class="title is-secondary is-light">
         Az időd drága
       </h2>
       <!--
@@ -13,9 +13,9 @@
       </div>
     -->
 
-      <p class="lead-text mb-5">Dőlj hátra és lazíts, miközben felejthetetlen videót készítünk Neked!</p>
+      <p class="lead-text mb-6 is-light">Dőlj hátra és lazíts, miközben felejthetetlen videót készítünk Neked!</p>
 
-      <div class="columns four-step is-multiline mb-5 is-variable is-1">
+      <div class="columns four-step is-multiline mb-5">
         <div class="column is-one-quarter-desktop is-half-tablet pb-4">
           <div class="fourstep-block has-text-centered">
             <img src="../assets/svg/fourstep-one.svg" alt="">
@@ -63,7 +63,7 @@
       </div>
 
       <div>
-        <router-link class="button is-secondary" :to="{ name: 'Products', params: {} }">
+        <router-link class="button is-primary" :to="{ name: 'Products', params: {} }">
           <span>Próbáld ki!</span>
           <span class="icon material-icons">east</span>
         </router-link>

@@ -8,8 +8,9 @@
   }
   .skill-wrapper {
     padding: 1.5rem;
-    border: 1px solid $light;
-    background-color: $lighter;
+    //border: 1px solid $light;
+    //background-color: $lighter;
+    background-color: #F9F8F6;
     border-radius: $radius;
     box-shadow: $box-shadow;
 
@@ -26,7 +27,24 @@
       min-height: 100%;
       border-radius: $radius;
       padding: 1rem;
+      //background-color: #F8F4F3;
+
+      display: flex;
+      flex-direction: row;
+
+      .skill-icon {
+        padding: 0 16px 0 0;
+        flex: 0 0 48px;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
     }
 
+  }
+
+  .hot-bg-color {
+    background-color: #E5E1E7;
   }
 }
