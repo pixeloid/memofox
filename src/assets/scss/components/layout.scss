@@ -181,7 +181,7 @@
   }
 
   .player-separator {
-    height: 320px;
+    height: 420px;
     display: flex;
     align-items: center;
     align-content: center;
@@ -194,7 +194,8 @@
       z-index: 2;
       .title, .lead-text {
         color: white;
-        filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.9));
+        text-shadow: 0px 0px 40px rgba(0, 0, 0, 0.6);
+        //filter: drop-shadow(0px 0px 24px rgba(0, 0, 0, 100));
       }
 
       .lead-text {

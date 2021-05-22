@@ -6,7 +6,7 @@
     <div class="bg-light">
       <div class="container">
         <div class="pt-max pb-max">
-          <h2 class="title is-secondary">Mindenkinek van kamerája</h2>
+          <h2 class="title is-primary">Mindenkinek van kamerája</h2>
           <div class="columns">
             <div class="column is-half is-desktop">
               <p class="lead-text">
@@ -21,29 +21,28 @@
     </div>
 
     <FourStep />
+
     <SkillRef />
-    <Vimeo />
+
     <Footer />
   </div>
 </template>
 
 <script>
 
-import Nav from "@/components/nav"
-import Hero from "@/components/hero"
-import FourStep from "@/components/fourStep"
-import Vimeo from "@/components/videoHeroSimple"
-import SkillRef from "@/components/skillReference"
-import Footer from "@/components/footer"
+import Nav from '@/components/nav'
+import Hero from '@/components/hero'
+import FourStep from '@/components/fourStep'
+import SkillRef from '@/components/skillReference'
+import Footer from '@/components/footer'
 
 export default {
   components: {
-    Nav, Hero, FourStep, Vimeo, SkillRef, Footer
+    Nav, Hero, FourStep, SkillRef, Footer
   }
 }
 </script>
 
 <style lang="scss">
-
 
 </style>

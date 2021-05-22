@@ -8,23 +8,23 @@ export const orderForm = [{
     name: 'Utazás vagy Kaland Videó',
     icon: 'hiking',
     image: require('@/assets/svg/traveler.svg')
-  },{
+  }, {
     active: false,
     name: 'Extrém sport vagy Motorsport Videó',
     icon: 'kayaking',
     image: require('@/assets/svg/action.svg')
-  },{
+  }, {
     active: false,
     name: 'Vlog Videó',
     icon: 'video_camera_front',
     image: require('@/assets/svg/vlog.svg')
-  },{
+  }, {
     active: false,
     name: 'Esemény, Nászút vagy Esküvői Videó',
     icon: 'event',
     image: require('@/assets/svg/party.svg')
   }]
-},{
+}, {
   title: 'Személyes, vagy Céges videó?',
   multi: false,
   items: [{
@@ -32,13 +32,13 @@ export const orderForm = [{
     name: 'Személyes Videó',
     icon: 'face',
     image: require('@/assets/svg/personal.svg')
-  },{
+  }, {
     active: false,
     name: 'Céges Videó',
     icon: 'maps_home_work',
     image: require('@/assets/svg/business.svg')
   }]
-},{
+}, {
   title: 'Válaszd ki, hogy milyen eszközökkel készültek a felvételek!',
   multi: true,
   amount: false,
@@ -47,28 +47,28 @@ export const orderForm = [{
     active: false,
     name: 'Akció kamera (GoPro, Sony... stb.)',
     image: require('@/assets/svg/gopro.svg')
-  },{
+  }, {
     active: false,
     name: 'Okostelefon (iPhone, Samsung... stb.)',
     image: require('@/assets/svg/smartphone.svg')
-  },{
+  }, {
     active: false,
     name: 'Képek',
     image: require('@/assets/svg/photo.svg')
-  },{
+  }, {
     active: false,
     name: 'Drone (DJI, Parrot, Autel... stb.)',
     image: require('@/assets/svg/drone.svg')
-  },{
+  }, {
     active: false,
     name: '360 Camera (GoPro Max, Insta 360... stb.)',
     image: require('@/assets/svg/360camera.svg')
-  },{
+  }, {
     active: false,
     name: 'DSLR (Sony, Cannon, Nikon... stb.)',
     image: require('@/assets/svg/dslr.svg')
   }]
-},{
+}, {
   title: 'Milyen legyen a szerkesztés stílusa?',
   multi: false,
   amount: false,
@@ -91,7 +91,7 @@ export const orderForm = [{
       ]
     },
     image: null
-  },{
+  }, {
     active: true,
     name: 'Mozi stílus',
     info: {
@@ -110,7 +110,7 @@ export const orderForm = [{
     },
     image: null
   }]
-},{
+}, {
   title: 'Válaszd ki, hogy milyen hosszú legyen a videód!',
   multi: false,
   amount: false,
@@ -120,9 +120,9 @@ export const orderForm = [{
     name: '0 - 2 Perc',
     image: null,
     info: {
-      highlight: false,
+      highlight: false
     }
-  },{
+  }, {
     active: true,
     name: '2 - 4 Perc',
     image: null,
@@ -130,14 +130,14 @@ export const orderForm = [{
       highlight: true,
       message: 'A legnépszerűbb!'
     }
-  },{
+  }, {
     active: false,
     name: '4 - 6 Perc',
     image: null,
     info: {
       highlight: false
     }
-  },{
+  }, {
     active: false,
     name: '6 - 8 Perc',
     image: null,
@@ -145,7 +145,7 @@ export const orderForm = [{
       highlight: false
     }
   }]
-},{
+}, {
   title: 'Becsüld meg a felvételeid méretét!',
   multi: false,
   amount: true,
@@ -155,73 +155,73 @@ export const orderForm = [{
     name: '20Gb',
     image: null,
     info: {
-      highlight: false,
+      highlight: false
     }
-  },{
+  }, {
     active: true,
     name: '30Gb',
     image: null,
     info: {
-      highlight: false,
+      highlight: false
     }
-  },{
+  }, {
     active: false,
     name: '40Gb',
     image: null,
     info: {
-      highlight: false,
+      highlight: false
     }
-  },{
+  }, {
     active: false,
     name: '50Gb',
     image: null,
     info: {
-      highlight: false,
+      highlight: false
     }
-  },{
+  }, {
     active: false,
     name: '60Gb',
     image: null,
     info: {
-      highlight: false,
+      highlight: false
     }
-  },{
+  }, {
     active: false,
     name: '70Gb',
     image: null,
     info: {
-      highlight: false,
+      highlight: false
     }
-  },{
+  }, {
     active: false,
     name: '80Gb',
     image: null,
     info: {
-      highlight: false,
+      highlight: false
     }
-  },{
+  }, {
     active: false,
     name: '120Gb',
     image: null,
     info: {
-      highlight: false,
+      highlight: false
     }
-  },{
+  }, {
     active: false,
     name: '160Gb',
     image: null,
     info: {
-      highlight: false,
+      highlight: false
     }
-  },{
+  }, {
     active: false,
     name: '200Gb',
     image: null,
     info: {
-      highlight: false,
+      highlight: false
     }
   }]
-},{
+}, {
   title: 'Add meg az e-mail címed!',
   multi: false,
   amount: false,
@@ -234,6 +234,6 @@ export const orderForm = [{
       highlight: false,
       message: null,
       desc: []
-    },
+    }
   }]
 }]

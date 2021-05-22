@@ -7,9 +7,9 @@
 </template>
 
 <script>
-//import getData from "./Products"
+// import getData from "./Products"
 export default {
-  data() {
+  data () {
     return {
       products: []
     }
@@ -17,7 +17,7 @@ export default {
   methods: {
 
   },
-  created() {
+  created () {
 
   }
 }

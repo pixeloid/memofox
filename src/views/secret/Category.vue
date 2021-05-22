@@ -119,7 +119,7 @@ export default {
   components: {
 
   },
-  data() {
+  data () {
     return {
       addModal: false,
       editModal: false,
@@ -140,75 +140,74 @@ export default {
     }
   },
   methods: {
-    watcher() {
-      db.collection("category").onSnapshot((querySnapshot) => {
-        this.categories = [];
+    watcher () {
+      db.collection('category').onSnapshot((querySnapshot) => {
+        this.categories = []
         querySnapshot.forEach((doc) => {
-            this.categories.push(doc);
-        });
-      });
-
+          this.categories.push(doc)
+        })
+      })
     },
-    addData() {
+    addData () {
       try {
-        db.collection("category").add(this.category)
-        console.log("ok")
+        db.collection('category').add(this.category)
+        console.log('ok')
         this.watcher()
         this.category.name = null
-      } catch(err) {
-        console.error("Error adding document: ", err)
+      } catch (err) {
+        console.error('Error adding document: ', err)
       }
     },
-    getData(data) {
+    getData (data) {
       try {
         db.collection(data).get().then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
             this.categories.push(doc)
           })
         })
-      } catch(err) {
+      } catch (err) {
         console.log(err)
       }
     },
-    deleteCategory(category, i) {
+    deleteCategory (category, i) {
       this.isLoad = true
       this.index = i
-      if(confirm('Bizotsan törlöd ezt a terméket? '+category.data().name)) {
-        db.collection("category").doc(category.id).delete().then(() => {
+      if (confirm('Bizotsan törlöd ezt a terméket? ' + category.data().name)) {
+        db.collection('category').doc(category.id).delete().then(() => {
           this.isLoad = false
           this.watcher()
-          console.log("Document successfully deleted!");
+          console.log('Document successfully deleted!')
         }).catch((error) => {
           this.isLoad = false
-          console.error("Error removing document: ", error);
-        });
+          console.error('Error removing document: ', error)
+        })
       } else {
         this.isLoad = false
       }
     },
-    edit(category, i) {
+    edit (category, i) {
       this.editModal = true
       this.edited.id = category.id
       this.edited.category = category.data()
     },
-    update(){
+    update () {
       this.isLoad = true
-      var washingtonRef = db.collection("category").doc(this.edited.id);
+      var washingtonRef = db.collection('category').doc(this.edited.id)
       return washingtonRef.update(this.edited.category)
-      .then(() => {
-        this.watcher()
-        this.isLoad = false
-        this.editModal = false
-        console.log("Document successfully updated!");
-      })
-      .catch((error) => {
-        this.isLoad = false
-        console.error("Error updating document: ", error);
-      });
+        .then(() => {
+          this.watcher()
+          this.isLoad = false
+          this.editModal = false
+          console.log('Document successfully updated!')
+        })
+        .catch((error) => {
+          this.isLoad = false
+          console.error('Error updating document: ', error)
+        })
     }
   },
-  created() {
-    this.getData("category")
+  created () {
+    this.getData('category')
   }
 }
 </script>

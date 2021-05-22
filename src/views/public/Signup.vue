@@ -56,7 +56,7 @@ import 'firebase/auth'
 
 export default {
   name: 'Signup',
-  data() {
+  data () {
     return {
       isLoad: false,
       email: null,
@@ -66,20 +66,19 @@ export default {
     }
   },
   methods: {
-    async Register() {
+    async Register () {
       this.isLoad = true
 
       try {
         const user = firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
-        this.$router.replace({name: "Secret"})
-      } catch(err) {
+        this.$router.replace({ name: 'Secret' })
+      } catch (err) {
         this.error = true
         this.message = err.message
         // console.log(err)
       }
 
       this.isLoad = false
-
     }
   }
 }

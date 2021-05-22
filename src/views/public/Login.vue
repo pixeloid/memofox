@@ -62,7 +62,7 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 
 export default {
-  data() {
+  data () {
     return {
       isLoad: false,
       email: '',
@@ -72,24 +72,22 @@ export default {
     }
   },
   methods: {
-    async Login() {
-
+    async Login () {
       this.isLoad = true
 
       try {
         const val = await firebase.auth().signInWithEmailAndPassword(this.email, this.password)
-        //console.log(val)
-        this.$router.replace({name: 'Secret'})
-      } catch(err) {
+        // console.log(val)
+        this.$router.replace({ name: 'Secret' })
+      } catch (err) {
         this.error = true
         this.message = err.message
         console.log(err)
       }
 
       this.isLoad = false
-
     },
-    closeNotification() {
+    closeNotification () {
       this.error = false
     }
   }
@@ -97,6 +95,5 @@ export default {
 </script>
 
 <style lang="scss">
-
 
 </style>

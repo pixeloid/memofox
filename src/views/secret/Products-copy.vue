@@ -80,7 +80,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       products: [],
       videoTypes: [],
@@ -104,60 +104,59 @@ export default {
     }
   },
   methods: {
-    showPrice() {
+    showPrice () {
       const productVariant = this.selected.amount + ' / ' + this.selected.length + ' / ' + this.selected.style
       const str = this.products.filter((product) => {
         return product.name.includes(productVariant)
       })
 
-      if(str != 0){
+      if (str != 0) {
         this.price = str[0].price + '$'
-        //console.log(this.selected)
+        // console.log(this.selected)
       } else {
         console.log('find not found')
       }
-
     }
   },
-  mounted() {
+  mounted () {
     // products
-    fetch("http://localhost:1337/products").then(
+    fetch('http://localhost:1337/products').then(
       (res) => res.json()
     ).then((data) => {
       this.products = data
     })
     // videoTypes
-    fetch("http://localhost:1337/video-types").then(
+    fetch('http://localhost:1337/video-types').then(
       (res) => res.json()
     ).then((data) => {
       this.videoTypes = data
     })
     // scopeTypes
-    fetch("http://localhost:1337/scope-types").then(
+    fetch('http://localhost:1337/scope-types').then(
       (res) => res.json()
     ).then((data) => {
       this.scopeTypes = data
     })
     // scopeTypes
-    fetch("http://localhost:1337/camera-types").then(
+    fetch('http://localhost:1337/camera-types').then(
       (res) => res.json()
     ).then((data) => {
       this.cameraTypes = data
     })
     // videoStyles
-    fetch("http://localhost:1337/video-styles").then(
+    fetch('http://localhost:1337/video-styles').then(
       (res) => res.json()
     ).then((data) => {
       this.videoStyles = data
     })
     // videoEditLengths
-    fetch("http://localhost:1337/video-edit-lengths").then(
+    fetch('http://localhost:1337/video-edit-lengths').then(
       (res) => res.json()
     ).then((data) => {
       this.videoEditLengths = data
     })
     // videoAmounts
-    fetch("http://localhost:1337/video-amounts").then(
+    fetch('http://localhost:1337/video-amounts').then(
       (res) => res.json()
     ).then((data) => {
       this.videoAmounts = data

@@ -10,7 +10,7 @@ import 'firebase/auth'
 export let loggedIn
 
 export default {
-  created() {
+  created () {
     firebase.auth().onAuthStateChanged(user => {
       this.loggedIn = !!user
       /*
@@ -21,10 +21,9 @@ export default {
       }
       */
       console.log(this.loggedIn)
-
     })
   },
-  data() {
+  data () {
     return {
       loggedIn: false
     }

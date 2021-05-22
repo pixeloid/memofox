@@ -15,24 +15,24 @@ import StarterKit from '@tiptap/starter-kit'
 
 export default {
   components: {
-    EditorContent,
+    EditorContent
   },
 
   props: {
     modelValue: {
       type: String,
-      default: 'mjhgvfcd',
-    },
+      default: 'mjhgvfcd'
+    }
   },
 
-  data() {
+  data () {
     return {
-      editor: null,
+      editor: null
     }
   },
 
   watch: {
-    modelValue(value) {
+    modelValue (value) {
       const isSame = this.editor.getHTML() === value
 
       if (isSame) {
@@ -40,25 +40,23 @@ export default {
       }
 
       this.editor.commands.setContent(this.modelValue, false)
-    },
+    }
   },
 
-  mounted() {
+  mounted () {
     this.editor = new Editor({
       content: this.modelValue,
       extensions: [
-        StarterKit,
+        StarterKit
       ],
       onUpdate: () => {
         this.$emit('update:modelValue', this.editor.getHTML())
-      },
+      }
     })
-
-
   },
 
-  beforeUnmount() {
+  beforeUnmount () {
     this.editor.destroy()
-  },
+  }
 }
 </script>

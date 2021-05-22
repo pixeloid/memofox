@@ -67,10 +67,10 @@
 </template>
 
 <script>
-import _ from 'lodash';
+import _ from 'lodash'
 
 export default {
-  data() {
+  data () {
     return {
       showBasket: false,
       basketItemNumber: 0,
@@ -93,31 +93,31 @@ export default {
         windowHeight: 0,
         height: 0,
         mobileSize: '768',
-        position: 0,
+        position: 0
       },
       product: null
     }
   },
-  created() {
+  created () {
     window.addEventListener('resize', this.handleResize)
   },
-  mounted() {
+  mounted () {
     this.calculateBasketHeight()
   },
   methods: {
-    updateBasketItemNumber(numb, mode) {
-      if(mode=='up'){
+    updateBasketItemNumber (numb, mode) {
+      if (mode == 'up') {
         this.basketItemNumber++
       } else {
         this.basketItemNumber--
       }
     },
-    handleResize: _.throttle(function() {
+    handleResize: _.throttle(function () {
       this.calculateBasketHeight()
     }, 100),
 
-    calculateBasketHeight() {
-      this.basket.height = window.innerHeight - "140"
+    calculateBasketHeight () {
+      this.basket.height = window.innerHeight - '140'
     }
   }
 

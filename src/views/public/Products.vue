@@ -36,10 +36,10 @@
 </template>
 
 <script>
-import Nav from "@/components/nav"
-import FourStep from "@/components/fourStep"
-import orderForm from "@/components/orderForm"
-import Footer from "@/components/footer"
+import Nav from '@/components/nav'
+import FourStep from '@/components/fourStep'
+import orderForm from '@/components/orderForm'
+import Footer from '@/components/footer'
 export default {
 
   components: {

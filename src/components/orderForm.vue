@@ -102,7 +102,7 @@ export default {
   components: {
 
   },
-  data: function() {
+  data: function () {
     return {
       slideData: [],
       orderPageNumber: 0,
@@ -110,46 +110,44 @@ export default {
       selectedItems: [],
       emailAddress: null,
       itemWrapper: orderForm,
-      //email validation
-      reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/,
+      // email validation
+      reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/
     }
   },
   methods: {
-    nextStep() {
-      const actualPage = this.orderPageNumber+1
-      if(actualPage < this.itemWrapper.length) {
+    nextStep () {
+      const actualPage = this.orderPageNumber + 1
+      if (actualPage < this.itemWrapper.length) {
         this.orderPageNumber += 1
       } else {
         console.log('nincs tobb')
       }
 
-      if(this.orderPageNumber > 0) {
+      if (this.orderPageNumber > 0) {
         this.backButton = true
       } else {
         this.backButton = false
       }
-
     },
-    backStep() {
+    backStep () {
       this.orderPageNumber -= 1
 
-      if(this.orderPageNumber > 0) {
+      if (this.orderPageNumber > 0) {
         this.backButton = true
       } else {
         this.backButton = false
       }
-
     },
-    itemClick(i) {
+    itemClick (i) {
       const multi = this.itemWrapper[this.orderPageNumber].multi
       const data = this.itemWrapper[this.orderPageNumber].items
 
-      if(!multi) {
-        //this.itemWrapper[this.orderPageNumber].items.filter(o=>o.i===i).map(o=>o.active=true)
-        data.filter(o=>o.i!==i).map(o=>o.active=false)
+      if (!multi) {
+        // this.itemWrapper[this.orderPageNumber].items.filter(o=>o.i===i).map(o=>o.active=true)
+        data.filter(o => o.i !== i).map(o => o.active = false)
         data[i].active = true
       } else {
-        if(data[i].active) {
+        if (data[i].active) {
           data[i].active = false
         } else {
           data[i].active = true
@@ -157,26 +155,24 @@ export default {
       }
 
       // this.selectedItems.push(data)
-
     },
-    isEmailValid: function() {
-      return (this.emailAddress == "")? "" : (this.reg.test(this.emailAddress)) ? 'is-primary' : 'is-danger';
+    isEmailValid: function () {
+      return (this.emailAddress == '') ? '' : (this.reg.test(this.emailAddress)) ? 'is-primary' : 'is-danger'
     },
-    lastStep() {
+    lastStep () {
       console.log(this.isEmailValid())
       console.log(this.emailAddress)
     }
 
   },
-  created() {
-
+  created () {
     this.itemWrapper[5].items.forEach((item, i) => {
       this.slideData.push(item.name)
     })
 
     console.log(this.slideData)
 
-    if(this.orderPageNumber > 1) {
+    if (this.orderPageNumber > 1) {
       this.backButton = true
     } else {
       this.backButton = false

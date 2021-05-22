@@ -5,7 +5,7 @@ export default {
       type: Object
     },
     value: {
-      default: "",
+      default: '',
       type: String
     }
   },
@@ -13,32 +13,32 @@ export default {
   watch: {
     editor: {
       immediate: true,
-      handler(editor) {
-        if (!editor || !editor.element) return;
+      handler (editor) {
+        if (!editor || !editor.element) return
 
-        this.editor.setContent(this.value);
-        this.editor.on("update", ({ getHTML }) => {
-          this.$emit("input", getHTML());
-        });
+        this.editor.setContent(this.value)
+        this.editor.on('update', ({ getHTML }) => {
+          this.$emit('input', getHTML())
+        })
 
         this.$nextTick(() => {
-          this.$el.appendChild(editor.element.firstChild);
-          editor.setParentComponent(this);
-        });
+          this.$el.appendChild(editor.element.firstChild)
+          editor.setParentComponent(this)
+        })
       }
     },
     value: {
-      handler(value) {
-        this.editor.setContent(value);
+      handler (value) {
+        this.editor.setContent(value)
       }
     }
   },
 
-  render(createElement) {
-    return createElement("div");
+  render (createElement) {
+    return createElement('div')
   },
 
-  beforeDestroy() {
-    this.editor.element = this.$el;
+  beforeDestroy () {
+    this.editor.element = this.$el
   }
-};
+}

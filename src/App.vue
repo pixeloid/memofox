@@ -4,10 +4,10 @@
 </template>
 
 <script>
-import Auth from "@/components/auth"
+import Auth from '@/components/auth'
 export default {
   components: {
-    'Auth': Auth
+    Auth: Auth
   }
 }
 

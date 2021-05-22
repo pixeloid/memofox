@@ -28,21 +28,21 @@
 </template>
 
 <script>
-import Basket from "@/components/basket"
+import Basket from '@/components/basket'
 
 export default {
   components: {
     Basket
   },
-  data() {
+  data () {
     return {
       handleScroll: 0,
-      windowScrollTop: 0,
+      windowScrollTop: 0
     }
   },
   methods: {
     handleSCroll (event) {
-      let header = document.querySelector(".navbar")
+      const header = document.querySelector('.navbar')
 
       if (window.scrollY > 16 && !header.className.includes('scrolled')) {
         header.classList.add('scrolled')
@@ -51,10 +51,10 @@ export default {
       }
     }
   },
-  created() {
+  created () {
     window.addEventListener('scroll', this.handleSCroll)
   },
-  unmounted() {
+  unmounted () {
     window.removeEventListener('scroll', this.handleSCroll)
   }
 }
@@ -62,6 +62,5 @@ export default {
 </script>
 
 <style lang="scss">
-
 
 </style>

@@ -179,13 +179,13 @@ const db = firebase.firestore()
 
 export default {
   components: {
-    Editor,
+    Editor
   },
   name: 'Products',
   props: {
-    msg: String,
+    msg: String
   },
-  data() {
+  data () {
     return {
       editor: null,
       filter: '',
@@ -213,101 +213,99 @@ export default {
     }
   },
   methods: {
-    highlightMatches(text) {
+    highlightMatches (text) {
       const matchExists = text
         .toLowerCase()
         .includes(this.filter.toLowerCase())
       if (!matchExists) return text
 
-      const re = new RegExp(this.filter, "ig")
+      const re = new RegExp(this.filter, 'ig')
       return text.replace(re, matchedText => `<strong>${matchedText}</strong>`)
     },
-    getCategoryName(id) {
-      var filtered = this.categories.find(el => el.id === id);
-      if(filtered) {
+    getCategoryName (id) {
+      var filtered = this.categories.find(el => el.id === id)
+      if (filtered) {
         return filtered.data().name
       } else {
         return 'undefined'
       }
-
     },
-    watcher() {
-      db.collection("products").orderBy('name').onSnapshot((querySnapshot) => {
-        this.products = [];
+    watcher () {
+      db.collection('products').orderBy('name').onSnapshot((querySnapshot) => {
+        this.products = []
         querySnapshot.forEach((doc) => {
-            this.products.push(doc);
-        });
-      });
-
+          this.products.push(doc)
+        })
+      })
     },
-    addData() {
+    addData () {
       try {
-        db.collection("products").add(this.product)
-        console.log("ok")
+        db.collection('products').add(this.product)
+        console.log('ok')
         this.watcher()
         this.product.name = null
         this.product.category = null
         this.product.desc = null
         this.product.price = null
-      } catch(err) {
-        console.error("Error adding document: ", err)
+      } catch (err) {
+        console.error('Error adding document: ', err)
       }
     },
-    reset() {
+    reset () {
       Object.assign(this.$data, this.$options.data.apply(this))
     },
-    getData(data) {
+    getData (data) {
       try {
         db.collection(data).orderBy('name', 'asc').get().then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
             this.products.push(doc)
           })
         })
-      } catch(err) {
+      } catch (err) {
         console.log(err)
       }
     },
-    deleteProduct(product) {
+    deleteProduct (product) {
       this.isLoad = true
-      if(confirm('Bizotsan törlöd ezt a terméket? '+product.data().name)) {
-        db.collection("products").doc(product.id).delete().then(() => {
+      if (confirm('Bizotsan törlöd ezt a terméket? ' + product.data().name)) {
+        db.collection('products').doc(product.id).delete().then(() => {
           this.isLoad = false
           this.watcher()
-          //this.products.splice(this.index,1)
-          console.log("Document successfully deleted!");
+          // this.products.splice(this.index,1)
+          console.log('Document successfully deleted!')
         }).catch((error) => {
           this.isLoad = false
-          console.error("Error removing document: ", error);
-        });
+          console.error('Error removing document: ', error)
+        })
       } else {
         this.isLoad = false
       }
     },
-    editProduct(product) {
+    editProduct (product) {
       this.editModal = true
       this.edit.id = product.id
       this.edit.product = product.data()
     },
-    updateProduct(){
+    updateProduct () {
       this.isLoad = true
 
-      var washingtonRef = db.collection("products").doc(this.edit.id);
+      var washingtonRef = db.collection('products').doc(this.edit.id)
       return washingtonRef.update(this.edit.product)
-      .then(() => {
-        //this.reset()
-        //this.getData('products')
-        this.watcher()
-        this.isLoad = false
-        this.editModal = false
-        console.log("Document successfully updated!");
-      })
-      .catch((error) => {
-        this.isLoad = false
-        console.error("Error updating document: ", error);
-      });
+        .then(() => {
+        // this.reset()
+        // this.getData('products')
+          this.watcher()
+          this.isLoad = false
+          this.editModal = false
+          console.log('Document successfully updated!')
+        })
+        .catch((error) => {
+          this.isLoad = false
+          console.error('Error updating document: ', error)
+        })
     }
   },
-  created() {
+  created () {
     console.log(this.filteredRows)
     try {
       db.collection('category').get().then((querySnapshot) => {
@@ -315,13 +313,13 @@ export default {
           this.categories.push(doc)
         })
       })
-    } catch(err) {
+    } catch (err) {
       console.log(err)
     }
-    this.getData("products")
+    this.getData('products')
   },
   computed: {
-    filteredRows() {
+    filteredRows () {
       return this.products.filter(product => {
         const name = product.data().name.toString().toLowerCase()
         const category = this.getCategoryName(product.data().category).toLowerCase()
@@ -334,9 +332,7 @@ export default {
         )
       })
     }
-  },
-
-
+  }
 
 }
 </script>

@@ -30,7 +30,7 @@ const routes = [
         path: 'orders',
         name: 'Orders',
         component: () => import('../views/secret/Orders.vue')
-      },
+      }
     ]
   },
   {
@@ -71,12 +71,11 @@ router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth)
   const isAuthenticated = firebase.auth().currentUser
 
-  if(requiresAuth && !isAuthenticated) {
+  if (requiresAuth && !isAuthenticated) {
     next('/login')
   } else {
     next()
   }
-
 })
 
 export default router

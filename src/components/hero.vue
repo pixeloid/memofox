@@ -10,7 +10,7 @@
           <div class="columns">
             <div class="column is-full-mobile is-two-thirds-tablet is-half-desktop is-half-widescreen is-half-fullhd">
               <div class="hero-title-wrapper">
-                <p class="title is-secondary">
+                <p class="title is-primary">
                   Küldetésünk, hogy megmentsük a fiók mélyére száműzött emlékeidet.
                 </p>
                 <div class="columns">
@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import VimeoPlayer from "@/components/vimeoPlayer"
+import VimeoPlayer from '@/components/vimeoPlayer'
 
 export default {
   components: {

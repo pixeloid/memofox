@@ -98,7 +98,7 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 
 export default {
-  data: function() {
+  data: function () {
     return {
       isActive: false,
       hasLeftAsideExpanded: true,
@@ -106,17 +106,17 @@ export default {
     }
   },
   methods: {
-    asideLeftToggle() {
+    asideLeftToggle () {
       this.hasLeftAsideExpanded = !this.hasLeftAsideExpanded
     },
-    asideRightToggle() {
+    asideRightToggle () {
       this.hasRightAsideExpanded = !this.hasRightAsideExpanded
     },
-    async logout() {
+    async logout () {
       try {
         const data = await firebase.auth().signOut()
-        this.$route.replace({name: "Home"})
-      } catch(err) {
+        this.$route.replace({ name: 'Home' })
+      } catch (err) {
         console.log(err)
       }
     }

@@ -8,12 +8,12 @@ export default {
   props: {
     id: Number
   },
-  data() {
+  data () {
     return {
       player: 'player' + this.id
     }
   },
-  mounted() {
+  mounted () {
     var options = {
       id: this.id,
       responsive: 1,

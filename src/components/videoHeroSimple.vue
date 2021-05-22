@@ -3,7 +3,7 @@
     <div class="columns is-center">
       <div class="column is-three-fifths is-offset-one-fifth">
         <p class="title is-secondary has-text-centered">
-          Pro szerkesztők, akik szemmel tartják a kalandvideókat.
+          Videó szerkesztők, akik odafigyelnek az emlékeidre
         </p>
         <p class="lead-text has-text-centered">
           Olyan történeteket alkotunk, melyet aztán érdemes megosztani. Válogatjuk az unalmasnak tűnő felvételeket és előhozzuk a legjobb pillanatokat.
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import VimeoPlayer from "@/components/vimeoPlayer"
+import VimeoPlayer from '@/components/vimeoPlayer'
 
 export default {
   components: {
