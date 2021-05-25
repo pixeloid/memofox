@@ -20,21 +20,18 @@
 
         <div class="columns mb-5">
           <div class="column is-three-fifths is-offset-one-fifth has-text-centered">
-            <p class="lead-text">A felvételeidet dinamikus átmenetekkel, figyelemfelkeltő színkorrekcióval és képstabilizálással szerkesztjük. A profik által szerkesztett emlékedet garantáltan imádni fogják!</p>
+            <p class="lead-text"><strong>A felvételeidet dinamikus átmenetekkel, figyelemfelkeltő színkorrekcióval és képstabilizálással szerkesztjük. A profik által szerkesztett emlékedet garantáltan imádni fogják!</strong></p>
           </div>
         </div>
 
         <div class="columns is-multiline">
-          <div class="columns">
-            <div class="column is-6-desktop">
-              <img src="../assets/svg/illustration-E-Learning.svg" alt="">
-            </div>
-            <div class="column is-6-desktop">
 
+          <div class="columns">
+            <div class="column is-4-desktop is-offset-2-desktop">
+              <img src="../assets/svg/illustration-service-music.svg" alt="">
+            </div>
+            <div class="column is-4-desktop">
               <div class="skill-block">
-                <div class="skill-icon">
-                  <img src="../assets/svg/icon-service-music.svg" alt="">
-                </div>
                 <div class="skill-info">
                   <h2 class="title is-tertiary">Zenék és hangok</h2>
                   <p class="lead-text subtitle">
@@ -42,10 +39,63 @@
                   </p>
                 </div>
               </div>
-
             </div>
           </div>
-          <div class="column is-6-tablet is-12-mobile">
+
+          <div class="columns">
+            <div class="column is-4-desktop is-offset-2">
+              <div class="skill-block">
+                <div class="skill-info">
+                  <h2 class="title is-tertiary">Rázkódás javítása</h2>
+                  <p class="lead-text subtitle">
+                    Minden videóból kihozzuk a lehető legtöbbet. Javítjuk a kéz által okozott képremegést, hiszen senki sem született gimbalnak. Szerkesztőink néha kész csodákat művelnek a felvételekkel.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="column is-4-desktop">
+              <img src="../assets/svg/illustration-vibration.svg" alt="">
+            </div>
+          </div>
+
+          <div class="columns">
+            <div class="column is-4-desktop is-offset-2-desktop">
+              <img src="../assets/svg/illustration-yours.svg" alt="">
+            </div>
+            <div class="column is-4-desktop">
+              <div class="skill-block">
+                <div class="skill-info">
+                  <h2 class="title is-tertiary">100%-ban csak a Tied!</h2>
+                  <p class="lead-text subtitle">
+                    Az elkészült videóra nem teszünk logót és vízjelet sem. Olyan lesz, mintha Te készítetted volna.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="columns">
+            <div class="column is-4-desktop is-offset-2">
+              <div class="skill-block">
+                <div class="skill-info">
+                  <h2 class="title is-tertiary">Dinamikus átmenetek a felvételek között</h2>
+                  <p class="lead-text subtitle">
+                    Minden videóból kihozzuk a lehető legtöbbet. Javítjuk a kéz által okozott képremegést, hiszen senki sem született gimbalnak. Szerkesztőink néha kész csodákat művelnek a felvételekkel.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="column is-4-desktop">
+              <img src="../assets/svg/illustration-vibration.svg" alt="">
+            </div>
+          </div>
+
+
+
+
+
+
+          <div class="column is-4-tablet is-12-mobile ">
             <div class="skill-block">
               <div class="skill-icon">
                 <img src="../assets/svg/icon-service-music.svg" alt="">

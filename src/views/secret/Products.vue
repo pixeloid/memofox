@@ -239,6 +239,11 @@ export default {
       })
     },
     addData () {
+      
+      if (this.product.desc == '<p></p>') {
+        this.product.desc = ''
+      }
+
       try {
         db.collection('products').add(this.product)
         console.log('ok')
@@ -288,8 +293,13 @@ export default {
     },
     updateProduct () {
       this.isLoad = true
+      var editID = this.edit.id
+      var editProduct = this.edit.product
 
-      var washingtonRef = db.collection('products').doc(this.edit.id)
+      var washingtonRef = db.collection('products').doc(editID)
+      if (editProduct.desc == '<p></p>') {
+        editProduct.desc = ''
+      }
       return washingtonRef.update(this.edit.product)
         .then(() => {
         // this.reset()
