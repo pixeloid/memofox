@@ -7,7 +7,7 @@
           <div class="columns is-centered">
             <div class="column">
               <h2 class="title is-secondary has-text-centered">
-                Az igénylőlap kitöltése után kiszámítjuk<br/>Neked az egyéni árat.
+                Az igénylőlap kitöltése után kiszámítjuk<br/>Neked az egyéni árat...
               </h2>
 
               <div class="order-form">
