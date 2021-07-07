@@ -24,6 +24,8 @@
 
     <SkillRef />
 
+    <Vimeo />
+
     <Footer />
   </div>
 </template>
@@ -34,11 +36,12 @@ import Nav from '@/components/nav'
 import Hero from '@/components/hero'
 import FourStep from '@/components/fourStep'
 import SkillRef from '@/components/skillReference'
+import Vimeo from '@/components/videoHeroSimple'
 import Footer from '@/components/footer'
 
 export default {
   components: {
-    Nav, Hero, FourStep, SkillRef, Footer
+    Nav, Hero, FourStep, SkillRef, Footer, Vimeo
   }
 }
 </script>

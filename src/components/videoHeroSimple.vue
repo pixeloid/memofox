@@ -1,6 +1,6 @@
 <template>
   <div class="player-separator">
-    <div class="columns is-center">
+    <div class="columns is-center is-fullwidth">
       <div class="column is-three-fifths is-offset-one-fifth">
         <p class="title is-secondary has-text-centered">
           Videó szerkesztők, akik odafigyelnek az emlékeidre

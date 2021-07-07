@@ -10,9 +10,9 @@
     padding: 1.5rem;
     //border: 1px solid $light;
     //background-color: $lighter;
-    background-color: #F9F8F6;
-    border-radius: $radius;
-    box-shadow: $box-shadow;
+    //background-color: #F9F8F6;
+    //border-radius: $radius;
+    //box-shadow: $box-shadow;
 
     .columns {
       margin: 0;
@@ -43,9 +43,19 @@
       }
     }
 
+    .skill-block-vertical {
+      min-height: 100%;
+      padding: 1rem;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
   }
 
   .hot-bg-color {
-    background-color: #E5E1E7;
+    //background-color: #E5E1E7;
+    background-color: $white;
   }
 }
