@@ -2,7 +2,10 @@
   <div class="main products-wrapper">
     <div class="product-hero page-with-nav">
       <Nav />
+      <Vimeo />
       <div class="container">
+
+        <!--
         <div class="columns">
           <div class="column is-half">
             <h2 class="title is-secondary">
@@ -24,10 +27,12 @@
             </p>
           </div>
         </div>
+        -->
+
       </div>
     </div>
     <div class="">
-      <orderForm class="pb-6 pt-6" />
+      <Survey class="pb-6 pt-6" />
     </div>
     <FourStep />
     <Footer />
@@ -38,12 +43,13 @@
 <script>
 import Nav from '@/components/nav'
 import FourStep from '@/components/fourStep'
-import orderForm from '@/components/orderForm'
+import Survey from '@/components/survey'
 import Footer from '@/components/footer'
+import Vimeo from '@/components/videoHeroSimple'
 export default {
 
   components: {
-    Nav, Footer, FourStep, orderForm
+    Nav, Footer, FourStep, Survey, Vimeo
   }
 }
 

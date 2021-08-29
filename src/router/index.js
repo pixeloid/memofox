@@ -12,14 +12,9 @@ const routes = [
     meta: { requiresAuth: true },
     children: [
       {
-        path: 'products',
+        path: 'commerce',
         name: 'secretProducts',
         component: () => import('../views/secret/Products.vue')
-      },
-      {
-        path: 'categories',
-        name: 'secretCategories',
-        component: () => import('../views/secret/Category.vue')
       },
       {
         path: 'overview',

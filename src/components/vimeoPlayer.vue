@@ -19,7 +19,7 @@ export default {
       responsive: 1,
       title: 0,
       controls: 0,
-      quality: '320p',
+      quality: '280p',
       muted: 1,
       autoplay: 1,
       loop: 1,

@@ -2,175 +2,101 @@
   <div class="pl-4 pr-4">
     <div class="container">
       <div class="title-with-function">
-        <h2 class="title">Termékek kezelése</h2>
-
+        <h2 class="title is-2">Bolt</h2>
         <div>
-          <button class="button is-secondary" @click="addModal=!addModal">
+          <button class="button is-secondary mr-4">
             <span class="icon material-icons">add</span>
-            <span>Termék hozzáadása</span>
+            <span>Tétel csomagok megtekintése</span>
+          </button>
+          <button class="button is-primary" @click="addModal=!addModal">
+            <span class="icon material-icons">add</span>
+            <span>Tétel létrehozása</span>
           </button>
         </div>
       </div>
 
-      <h2 class="subtitle">Basic CRUD (create/read/update/delete) in Firebase and Vue</h2>
-
-      <div class="container-fluid content-wrapper">
-        <div class="" v-if="products.length">
-          <table class="table is-action">
-            <thead>
-              <tr>
-                <th>Termék neve</th>
-                <th>Kategória</th>
-                <th>Leírás</th>
-                <th>Ár</th>
-                <th> <input type="text" class="input"
-                 placeholder="Filter by department or employee"
-                 v-model="filter" />
-               </th>
-              </tr>
-            </thead>
-            <tbody>
-
-            <!-- ITEMS -->
-              <tr v-for="product in filteredRows">
-                <td>{{ product.data().name }}</td>
-                <td>{{ getCategoryName(product.data().category) }}</td>
-                <td>{{ product.data().desc }}</td>
-                <td>{{ product.data().price }}</td>
-                <td>
-                  <div class="has-text-right table-functions">
-                    <button class="button is-info mr-2" @click="editProduct(product)">
-                      <span class="material-icons-outlined">
-                        edit
-                      </span>
-                    </button>
-                    <button class="button is-danger" v-bind:class="{'is-loading': isLoad}" @click="deleteProduct(product)">
-                      <span class="material-icons-outlined">
-                        delete_outline
-                      </span>
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            <!-- ITEMS -->
-
-            </tbody>
-          </table>
+      <div class="box">
+        <div>
+          <div class="title-with-function mb-5">
+            <h2 class="title is-4">Típusok</h2>
+          </div>
+          <div>
+            <span v-for="type in productTypes" class="tag is-medium mr-2"> {{ type.type }}</span>
+          </div>
         </div>
-        <div v-else>
-          <p>Még nincsenek termékek.</p>
-        </div>
-      </div>
 
-      <!-- Item adding modal -->
-      <div class="modal is-active" v-if="addModal">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-          <div class="modal-card-head">
-            <p class="modal-card-title">Add product</p>
-            <button class="button is-light is-small" @click="addModal=!addModal">
-              <span class="material-icons">close</span>
-            </button>
+        <hr>
+
+        <div class="">
+          <div class="title-with-function mb-5">
+            <h2 class="title is-4">Tételek</h2>
           </div>
 
-            <section class="modal-card-body">
-              <div class="field">
-                <label class="label">Termék neve</label>
-                <div class="control">
-                  <input class="input" type="text" v-model="product.name" placeholder="Product name">
-                </div>
-              </div>
-              <div class="field">
-                <label class="label">Kategória</label>
-                <div class="control">
-                  <div class="select">
-                    <select v-model="product.category">
-                      <option value="" selected>Válassz kategóriát</option>
-                      <option v-for="(option, i) in categories" :key="i" v-if="categories.length" v-bind:value="option.id">
-                        {{ option.data().name }}
-                      </option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="field">
-                <label class="label">Termék leírása</label>
-                <div class="control">
-                  <textarea class="textarea" v-model="product.desc" placeholder="Desc"></textarea>
-                </div>
-              </div>
-              <div class="field">
-                <label class="label">Termék ára</label>
-                <div class="control">
-                  <input class="input" type="text" v-model="product.price" placeholder="Price">
-                </div>
-              </div>
-            </section>
-            <div class="modal-card-foot">
-              <button class="button is-success" v-bind:class="{'is-loading': isLoad}" @click="addData">Mentés</button>
-              <button class="button" @click="addModal=!addModal">Mégsem</button>
-            </div>
+          <div class="" v-if="products.length">
+            <table class="table is-action">
+              <thead>
+                <tr>
+                  <th>Tétel neve</th>
+                  <th>Tétel kategória</th>
+                  <th>Tétel típusa</th>
+                  <th>Leírás</th>
+                  <th class="has-text-right">Ár</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
 
-        </div>
-      </div>
+              <!-- ITEMS -->
+                <tr v-for="product in products">
+                  <td><strong>{{ product.data().name }}</strong></td>
+                  <td>{{ getCategoryName(product.data().category) }}</td>
+                  <td>{{ product.data().type }}</td>
+                  <td>{{ product.data().desc }}</td>
+                  <td class="has-text-right">{{ product.data().price }} Ft</td>
+                  <td>
+                    <div class="has-text-right table-functions">
+                      <button class="button is-info mr-2" @click="updateProduct(product)">
+                        <span class="material-icons-outlined">
+                          edit
+                        </span>
+                      </button>
+                      <button class="button is-danger" v-bind:class="{'is-loading': isLoad}" @click="deleteProduct(product)">
+                        <span class="material-icons-outlined">
+                          delete_outline
+                        </span>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              <!-- ITEMS -->
 
-      <!-- Item editing modal -->
-      <div class="modal is-active" v-if="editModal">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-          <div class="modal-card-head">
-            <h2 class="modal-card-title">Edit</h2>
-            <button class="button is-light is-small" @click="editModal=!editModal">
-              <span class="material-icons">close</span>
-            </button>
+              </tbody>
+            </table>
+          </div>
+          <div v-else>
+            <p>Még nincsenek termékek.</p>
           </div>
 
-            <section class="modal-card-body">
-              <div class="field">
-                <label class="label">Termék neve</label>
-                <div class="control">
-                  <input class="input" type="text" v-model="edit.product.name" placeholder="Product name">
-                </div>
-              </div>
-              <div class="field">
-                <label class="label">Kategória</label>
-                <div class="control">
-                  <div class="select">
-                    <select v-model="edit.product.category">
-                      <option v-for="(option, i) in categories" :key="i" v-if="categories.length" v-bind:value="option.id">
-                        {{ option.data().name }}
-                      </option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="field">
-                <label class="label">Termék leírása</label>
-                <div class="control">
-                  <editor class="editor" v-model="edit.product.desc" />
-                </div>
-              </div>
-              <div class="field">
-                <label class="label">Termék ára</label>
-                <div class="control">
-                  <input class="input" type="text" v-model="edit.product.price" placeholder="Price">
-                </div>
-              </div>
-            </section>
-            <div class="modal-card-foot">
-              <button class="button is-success" v-bind:class="{'is-loading': isLoad}" @click="updateProduct">Mentés</button>
-              <button class="button" @click="editModal=!editModal">Cancel</button>
-            </div>
-
         </div>
+
       </div>
 
+      <NewProductModal
+        v-bind:addModal="addModal"
+        v-bind:categories="categories" 
+        v-bind:productTypes="productTypes"  />
+      <EditProductModal
+        v-bind:editModal="editModal"
+        v-bind:productTypes="productTypes"
+        v-bind:categories="categories"
+        v-bind:editProduct="editProduct" />
     </div>
   </div>
 </template>
 
 <script>
-import Editor from './components/editor'
+import NewProductModal from './components/NewProductModal'
+import EditProductModal from './components/EditProductModal'
 
 import firebase from 'firebase/app'
 import 'firebase/firestore'
@@ -179,7 +105,7 @@ const db = firebase.firestore()
 
 export default {
   components: {
-    Editor
+    NewProductModal, EditProductModal
   },
   name: 'Products',
   props: {
@@ -187,40 +113,46 @@ export default {
   },
   data () {
     return {
-      editor: null,
-      filter: '',
+      productTypes: [{
+        type: "Szolgáltatás"
+      },{
+        type: "Termék"
+      }],
       addModal: false,
       editModal: false,
-      index: 0,
       isLoad: false,
       products: [],
       categories: [],
-      product: {
-        name: null,
-        category: null,
-        desc: null,
-        price: null
-      },
-      edit: {
+      editProduct: {
         id: null,
-        product: {
-          name: null,
-          category: null,
-          desc: null,
-          price: null
-        }
+        data: null
       }
     }
   },
   methods: {
-    highlightMatches (text) {
-      const matchExists = text
-        .toLowerCase()
-        .includes(this.filter.toLowerCase())
-      if (!matchExists) return text
-
-      const re = new RegExp(this.filter, 'ig')
-      return text.replace(re, matchedText => `<strong>${matchedText}</strong>`)
+    reset () {
+      Object.assign(this.$data, this.$options.data.apply(this))
+    },
+    watcher () {
+      db.collection('products').orderBy('name', 'asc').onSnapshot((querySnapshot) => {
+        this.products = []
+        this.editProduct.id = null
+        this.editProduct.data = null
+        querySnapshot.forEach((doc) => {
+          this.products.push(doc)
+        })
+      })
+    },
+    getProducts() {
+      try {
+        db.collection('products').orderBy('name', 'asc').get().then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            this.products.push(doc)
+          })
+        })
+      } catch (err) {
+        console.log(err)
+      }
     },
     getCategoryName (id) {
       var filtered = this.categories.find(el => el.id === id)
@@ -230,45 +162,10 @@ export default {
         return 'undefined'
       }
     },
-    watcher () {
-      db.collection('products').orderBy('name').onSnapshot((querySnapshot) => {
-        this.products = []
-        querySnapshot.forEach((doc) => {
-          this.products.push(doc)
-        })
-      })
-    },
-    addData () {
-      
-      if (this.product.desc == '<p></p>') {
-        this.product.desc = ''
-      }
-
-      try {
-        db.collection('products').add(this.product)
-        console.log('ok')
-        this.watcher()
-        this.product.name = null
-        this.product.category = null
-        this.product.desc = null
-        this.product.price = null
-      } catch (err) {
-        console.error('Error adding document: ', err)
-      }
-    },
-    reset () {
-      Object.assign(this.$data, this.$options.data.apply(this))
-    },
-    getData (data) {
-      try {
-        db.collection(data).orderBy('name', 'asc').get().then((querySnapshot) => {
-          querySnapshot.forEach((doc) => {
-            this.products.push(doc)
-          })
-        })
-      } catch (err) {
-        console.log(err)
-      }
+    updateProduct(product) {
+      this.editProduct.id = product.id
+      this.editProduct.data = product.data()
+      this.editModal = true;
     },
     deleteProduct (product) {
       this.isLoad = true
@@ -285,38 +182,9 @@ export default {
       } else {
         this.isLoad = false
       }
-    },
-    editProduct (product) {
-      this.editModal = true
-      this.edit.id = product.id
-      this.edit.product = product.data()
-    },
-    updateProduct () {
-      this.isLoad = true
-      var editID = this.edit.id
-      var editProduct = this.edit.product
-
-      var washingtonRef = db.collection('products').doc(editID)
-      if (editProduct.desc == '<p></p>') {
-        editProduct.desc = ''
-      }
-      return washingtonRef.update(this.edit.product)
-        .then(() => {
-        // this.reset()
-        // this.getData('products')
-          this.watcher()
-          this.isLoad = false
-          this.editModal = false
-          console.log('Document successfully updated!')
-        })
-        .catch((error) => {
-          this.isLoad = false
-          console.error('Error updating document: ', error)
-        })
     }
   },
   created () {
-    console.log(this.filteredRows)
     try {
       db.collection('category').get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
@@ -326,22 +194,7 @@ export default {
     } catch (err) {
       console.log(err)
     }
-    this.getData('products')
-  },
-  computed: {
-    filteredRows () {
-      return this.products.filter(product => {
-        const name = product.data().name.toString().toLowerCase()
-        const category = this.getCategoryName(product.data().category).toLowerCase()
-        const desc = product.data().desc.toString().toLowerCase()
-        const price = product.data().price.toString().toLowerCase()
-        const searchTerm = this.filter.toLowerCase()
-
-        return (
-          price.includes(searchTerm) || category.includes(searchTerm) || name.includes(searchTerm)
-        )
-      })
-    }
+    this.getProducts()
   }
 
 }

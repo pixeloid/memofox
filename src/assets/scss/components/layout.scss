@@ -99,6 +99,11 @@
   }
 
   .footer {
+    height: 600px;
+    background-image: url('~@/assets/svg/footer_bg.png');
+    background-position: center right;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-color: darken( $secondary, 30% );
   }
 
@@ -132,7 +137,7 @@
 
     //padding: 1.5rem;
     background-color: $white;
-    border-radius: $radius;
+    border-radius: 12px;
     //box-shadow: $box-shadow;
   }
 

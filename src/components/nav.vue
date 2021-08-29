@@ -1,4 +1,5 @@
 <template>
+
   <nav class="navbar boxed-shadow is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="container">
       <div class="navbar-brand vcenter">
@@ -23,8 +24,9 @@
             <Basket />
         </div>
       </div>
-      </div>
+    </div>
   </nav>
+
 </template>
 
 <script>

@@ -1,13 +1,12 @@
 <template>
   <div class="container">
     <div class="columns">
-      <div class="column is-8 is-offset-2">
-
-        <div class="content-on-hero pt-6">
+      <div class="column is-8">
+        <div class="content-on-hero">
           <div class="columns is-centered">
-            <div class="column">
-              <h2 class="title is-secondary has-text-centered">
-                Az igénylőlap kitöltése után kiszámítjuk<br/>Neked az egyéni árat.
+            <div class="column p-6">
+              <h2 class="title is-secondary">
+                Az igénylőlap kitöltése után kiszámítjuk Neked az egyéni árat.
               </h2>
 
               <div class="order-form">
@@ -96,6 +95,13 @@
         </div>
 
       </div>
+      <div class="column is-4">
+        <div class="flow-status">
+          <div class="panel" v-if="videoType">
+            {{videoType}}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -116,11 +122,23 @@ export default {
       emailAddress: null,
       itemWrapper: orderForm,
       // email validation
-      reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/
+      reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/,
+      // steps
+      videoType: null,
+      videoPersonal: null,
+      videoCameras: null,
+      videoEditType: null,
+      videoLength: null,
+      videSize: null
     }
   },
   methods: {
     nextStep () {
+      const data = this.itemWrapper[this.orderPageNumber].items
+      var filtered = data.find(el => el.active === true)
+      console.log(filtered.name)
+      this.videoType = filtered.name
+
       const actualPage = this.orderPageNumber + 1
       if (actualPage < this.itemWrapper.length) {
         this.orderPageNumber += 1

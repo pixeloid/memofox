@@ -2,12 +2,12 @@
   <div class="pl-4 pr-4">
     <div class="container">
       <div class="title-with-function">
-        <h2 class="title">Kategóriák kezelése</h2>
+        <h2 class="title">Szolgáltatás típusok kezelése</h2>
 
         <div>
-          <button class="button is-secondary" @click="addModal=!addModal">
+          <button class="button is-primary" @click="addModal=!addModal">
             <span class="icon material-icons">add</span>
-            <span>Kategória hozzáadása</span>
+            <span>Típus hozzáadása</span>
           </button>
         </div>
       </div>
@@ -18,7 +18,7 @@
           <table class="table is-action">
             <thead>
               <tr>
-                <th>Kategória neve</th>
+                <th>Szolgáltatás típus</th>
                 <th></th>
               </tr>
             </thead>
