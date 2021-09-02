@@ -1,7 +1,7 @@
 <template>
   <section>
     <p class="title is-tertiary vcenter">
-      <span class="order-sort-numb hcenter vcenter">{{ orderPageNumber }}</span>
+      <span class="order-sort-numb hcenter vcenter">{{ surveyPageNumber }}</span>
       <span>{{ title }}</span>
     </p>
   </section>
@@ -10,7 +10,7 @@
 <script>
 export default {
   props: {
-    orderPageNumber: String,
+    surveyPageNumber: Number,
     title: String,
   },
   data() {

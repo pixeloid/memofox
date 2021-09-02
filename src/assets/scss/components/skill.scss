@@ -7,12 +7,17 @@
     background-size: cover;
   }
   .skill-wrapper {
-    padding: 1.5rem;
+    //padding: 1.5rem;
     //border: 1px solid $light;
     //background-color: $lighter;
     //background-color: #F9F8F6;
     //border-radius: $radius;
     //box-shadow: $box-shadow;
+
+    img {
+      width: 400px;
+      height: auto;
+    }
 
     .columns {
       margin: 0;
@@ -37,7 +42,7 @@
         padding: 0 16px 0 0;
         flex: 0 0 64px;
         img {
-          width: 100%;
+          width: 400px;
           height: auto;
         }
       }
@@ -56,6 +61,6 @@
 
   .hot-bg-color {
     //background-color: #E5E1E7;
-    background-color: $white;
+    background-color: #F5F5F7;
   }
 }

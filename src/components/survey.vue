@@ -1,64 +1,69 @@
 <template>
   <div class="container">
+    <div class="content-on-hero mb-5">
+      <span class="title has-text-light mb-0">MemoFox videószerkesztő szolgáltatás</span>
+      <div class="vcenter has-text-light">
+        <span class="is-size-5 material-icons-round">star</span>
+        <span class="is-size-5 material-icons-round">star</span>
+        <span class="is-size-5 material-icons-round">star</span>
+        <span class="is-size-5 material-icons-round">star</span>
+        <span class="is-size-5 material-icons-round pr-2">star</span>
+        <span class="is-size-6 pt-1">24 vélemény | 64 videó</span>
+      </div>
+    </div>
     <div class="columns">
       <div class="column is-8">
-        <div class="content-on-hero p-6">
-          <h2 class="title is-secondary">
-            Az igénylőlap kitöltése után kiszámítjuk Neked az egyéni árat.
-          </h2>
-          <hr class="simple" />
-          <div class="survey-form">
-            <div class="mb-4">
 
-              <div v-if="orderPageNumber == 1">
-                <VideoType v-bind:orderPageNumber="orderPageNumber" v-bind:title="'Válaszd ki a videód típusát'" />
-              </div>
-              <div v-if="orderPageNumber == 2">
-                <VideoPersonal v-bind:orderPageNumber="orderPageNumber" v-bind:title="'Személyes, vagy Céges videó?'" />
-              </div>
-              <div v-if="orderPageNumber == 3">
-                <VideoCameras v-bind:orderPageNumber="orderPageNumber" v-bind:title="'Válaszd ki, hogy milyen eszközökkel készültek a felvételek!'" />
-              </div>
-              <div v-if="orderPageNumber == 4">
-                <VideoEditType v-bind:orderPageNumber="orderPageNumber" v-bind:title="'Milyen legyen a szerkesztés stílusa?'" />
-              </div>
-              <div v-if="orderPageNumber == 5">
-                <VideoLenth v-bind:orderPageNumber="orderPageNumber" v-bind:title="'Válaszd ki, hogy milyen hosszú legyen a videód!'" />
-              </div>
-              <div v-if="orderPageNumber == 6">
-                <VideoSize v-bind:orderPageNumber="orderPageNumber" v-bind:title="'Becsüld meg a felvételeid méretét!'" />
-              </div>
+        <div class="survey-form box p-0">
 
-              <div v-for="(e, i) in categories" :key="i" class="">
-                {{ e.data().name }}
-              </div>
-              <div v-for="(e, i) in products" :key="i" class="">
-                {{ e.data().name }}
-              </div>
+          <div class="survey-form-content" v-if="surveyPageNumber == 1">
+            <VideoType v-bind:surveyPageNumber="surveyPageNumber" v-bind:title="'Válaszd ki a videód típusát'" />
+          </div>
+          <div class="survey-form-content" v-if="surveyPageNumber == 2">
+            <VideoPersonal v-bind:surveyPageNumber="surveyPageNumber" v-bind:title="'Személyes, vagy Céges videó?'" />
+          </div>
+          <div class="survey-form-content" v-if="surveyPageNumber == 3">
+            <VideoCameras v-bind:surveyPageNumber="surveyPageNumber" v-bind:title="'Válaszd ki, hogy milyen eszközökkel készültek a felvételek!'" />
+          </div>
+          <div class="survey-form-content" v-if="surveyPageNumber == 4">
+            <VideoEditType v-bind:surveyPageNumber="surveyPageNumber" v-bind:title="'Milyen legyen a szerkesztés stílusa?'" />
+          </div>
+          <div class="survey-form-content" v-if="surveyPageNumber == 5">
+            <VideoLenth v-bind:surveyPageNumber="surveyPageNumber" v-bind:title="'Válaszd ki, hogy milyen hosszú legyen a videód!'" />
+          </div>
+          <div class="survey-form-content" v-if="surveyPageNumber == 6">
+            <VideoSize v-bind:surveyPageNumber="surveyPageNumber" v-bind:title="'Becsüld meg a felvételeid méretét!'" />
+          </div>
 
-            </div>
-            <div class="survey-buttons has-text-right">
-              <button v-if="backButton" type="button" class="button is-primary is-outline" @click="backStep">
+          <div class="survey-buttons has-text-right p-4 vcenter">
+            <div class="button-container has-text-left">
+              <button type="button" class="button is-primary is-outline" v-bind:disabled="!backButton" @click="backStep">
                 <span class="material-icons-round">fast_rewind</span>
               </button>
+            </div>
+            <span class="is-size-6"><strong>{{ surveyPageNumber }} /  {{ maximumStep }}</strong></span>
+            <div class="button-container has-text-right">
               <button type="button" class="button is-primary" @click="nextStep">
                 <span>{{ nextButtonText }}</span>
                 <span class="icon material-icons-round">fast_forward</span>
               </button>
             </div>
           </div>
+
         </div>
+
       </div>
       <div class="column is-4">
-        <div class="flow-status has-background-light content-on-hero p-6">
-          <h3 class="title is-tertiary">
-            Flow Status
-          </h3>
+        <div class="box is-fullheight p-6">
+          <h2 class="title is-5">
+            Megrendelés állapota
+          </h2>
+          <p class="is-size-5 pb-6">A legegyszerűbb módja annak, hogy az emléked egy menő és megosztható videóba mentsd. A fejlett videoszerkesztés és a szakértői történetmesélés lehetővé teszi, hogy egy teljesen testreszabott videóval újraéld az izgalmas kalandodat.</p>
           <p class="subtitle">
             hogy konnyebb legyen az elet.
           </p>
           <div class="pt-2">
-            eddig ezt valaszoltad:
+            eddig ezt valaszoltad: 13.435 Ft
           </div>
         </div>
       </div>
@@ -87,21 +92,71 @@ export default {
     return {
       products: [],
       categories: [],
-      orderPageNumber: 1,
+      surveyPageNumber: 1,
       maximumStep: 6,
       backButton: false,
       nextButtonText: 'Következő',
-      selectedItems: [],
+      selectedItems: {
+        videoType: [],
+        videoPersonal: [],
+        videoCameras: [],
+        videoEditType: [],
+        videoLenth: [],
+        videoSize: []
+      },
     }
   },
   methods: {
+    itemClick(i, items, multi, type) {
+
+      const data = items
+
+        if (!multi) {
+          data.filter(o => o.i !== i).map(o => o.active = false)
+          data[i].active = true
+          type[0] = data[i]
+        } else {
+          if (data[i].active) {
+            //itt veszi ki
+            data[i].active = false
+
+            var selectedItems = type
+
+            selectedItems.forEach((item, index) => {
+              if(item.name == data[i].name) {
+                type.splice(index, 1)
+              }
+            })
+
+          } else {
+            data[i].active = true
+            type.push(data[i])
+          }
+        }
+
+    },
+    filterActiveElement(items, type, multi) {
+      var data = type
+      var index = 0;
+      data.forEach((item, i) => {
+        if(item.active == true) {
+          index++
+          items.find(el => el.name === item.name).active = true
+        }
+      })
+
+      if(index == 0) {
+        this.itemClick(0, items, multi, type)
+      }
+
+    },
     getProducts () {
       try {
-        db.collection('products').orderBy('name', 'asc').get().then((querySnapshot) => {
+        db.collection('products').orderBy('rate', 'asc').get().then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
             this.products.push(doc)
           })
-          console.log(this.products)
+          //console.log(this.products)
         })
       } catch (err) {
         console.log(err)
@@ -117,27 +172,45 @@ export default {
       }
     },
     nextStep () {
-      if (this.maximumStep != this.orderPageNumber) {
-        this.orderPageNumber += 1
+      if (this.maximumStep != this.surveyPageNumber) {
+        this.surveyPageNumber += 1
       }
 
-      if (this.orderPageNumber == 1) {
+      if (this.surveyPageNumber == 1) {
         this.backButton = false
       } else {
         this.backButton = true
       }
     },
     backStep () {
-      if (this.orderPageNumber != 1) {
-        this.orderPageNumber -= 1
+      if (this.surveyPageNumber != 1) {
+        this.surveyPageNumber -= 1
       }
 
-      if (this.orderPageNumber == 1) {
+      if (this.surveyPageNumber == 1) {
         this.backButton = false
       } else {
         this.backButton = true
       }
     },
+    getCategoryName (id) {
+      var filtered = this.categories.find(el => el.id === id)
+      if (filtered) {
+        return filtered.data().name
+      } else {
+        return 'undefined'
+      }
+    },
+    getFilteredProducts (categoryFilter, items) {
+      this.products.forEach((item, i) => {
+        var categoryName = this.getCategoryName(item.data().category)
+
+        if(categoryName == categoryFilter) {
+          items.push(item.data())
+        }
+      })
+
+    }
   },
   created () {
     this.getProducts()

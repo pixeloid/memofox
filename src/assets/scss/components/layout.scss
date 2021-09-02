@@ -6,6 +6,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  .subtitle, .title {
+    line-height: normal;
+  }
+
   .page-with-nav {
     padding-top: 8rem;
   }
@@ -43,13 +47,16 @@
     width:100%;
   }
 
+  .is-fullheight {
+    height:100%;
+  }
+
   .hcenter {
     display: flex;
     justify-content: center;
   }
 
   .memo, .fox {
-    //font-family: Jaldi;
     font-weight: 700;
     text-transform: uppercase;
   }
@@ -136,8 +143,8 @@
     //box-shadow: 0px 2px 8px rgba(0,0,0,0.04);
 
     //padding: 1.5rem;
-    background-color: $white;
-    border-radius: 12px;
+    //background-color: $white;
+    border-radius: 6px;
     //box-shadow: $box-shadow;
   }
 
@@ -147,7 +154,8 @@
     //background: -webkit-linear-gradient(267deg, rgba(236,204,202,1) 0%, rgba(250,233,232,1) 100%);
     //background: -o-linear-gradient(267deg, rgba(236,204,202,1) 0%, rgba(250,233,232,1) 100%);
     //background: linear-gradient(357deg, rgba(236,204,202,1) 0%, rgba(250,233,232,1) 100%);
-    background-color: $lighter;
+    //background-color: $lighter;
+    background-color: #F5F5F7;
 
     //background-image: url('~@/assets/svg/mountains-background.svg');
     //background-repeat: no-repeat;
@@ -157,13 +165,13 @@
   }
 
   .fourstep-block {
-      border-radius: $radius;
+      border-radius: 12px;
       padding: 1.5rem;
       background-color: rgba(255,255,255, 0.9);
       height: 100%;
       min-height: 100%;
       box-shadow: $box-shadow;
-      border: 1px solid $light;
+      //border: 1px solid $light;
 
       .title {
         margin-top: 8px;

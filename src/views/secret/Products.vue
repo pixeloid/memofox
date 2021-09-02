@@ -83,7 +83,7 @@
 
       <NewProductModal
         v-bind:addModal="addModal"
-        v-bind:categories="categories" 
+        v-bind:categories="categories"
         v-bind:productTypes="productTypes"  />
       <EditProductModal
         v-bind:editModal="editModal"
@@ -134,14 +134,12 @@ export default {
       Object.assign(this.$data, this.$options.data.apply(this))
     },
     watcher () {
-      db.collection('products').orderBy('name', 'asc').onSnapshot((querySnapshot) => {
-        this.products = []
-        this.editProduct.id = null
-        this.editProduct.data = null
-        querySnapshot.forEach((doc) => {
-          this.products.push(doc)
-        })
-      })
+      this.products = []
+      this.editProduct.id = null
+      this.editProduct.data = null
+
+      this.getProducts()
+
     },
     getProducts() {
       try {

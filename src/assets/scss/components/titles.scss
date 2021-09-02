@@ -1,9 +1,18 @@
 .main {
+  .editor-service-title {
+    display: flex;
+    justify-content: space-between;
+  }
   .title {
-    font-family: Sora;
-    font-weight: 700;
+    font-family: Poppins;
+    font-weight: 600;
     color: $secondary;
     flex-direction: row;
+
+    &.editor-service-title {
+      display: flex;
+      justify-content: space-between;
+    }
 
     &.is-fox {
       color: $primary;

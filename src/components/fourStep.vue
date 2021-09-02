@@ -13,13 +13,13 @@
       </div>
     -->
 
-      <p class="subtitle lead-text mb-6 has-text-centered">Dőlj hátra és lazíts, miközben felejthetetlen videót készítünk Neked!</p>
+      <p class="subtitle mb-6 has-text-centered">Dőlj hátra és lazíts, miközben felejthetetlen videót készítünk Neked!</p>
       <div class="four-step">
         <div class="columns is-multiline">
           <div class="column is-one-quarter-desktop is-half-tablet pb-4">
             <div class="fourstep-block has-text-centered">
               <img src="../assets/svg/fourstep-one.svg" alt="">
-              <h2 class="title is-tertiary hcenter vcenter">
+              <h2 class="title is-5 mb-2 hcenter vcenter">
                 1. Rendeld meg!
               </h2>
               <p class="lead-text has-text-centered">
@@ -30,7 +30,7 @@
           <div class="column is-one-quarter-desktop is-half-tablet pb-4">
             <div class="fourstep-block has-text-centered">
               <img src="../assets/svg/fourstep-two.svg" alt="">
-              <h2 class="title is-tertiary hcenter vcenter">
+              <h2 class="title is-5 mb-2 hcenter vcenter">
                 2. Tedd Egyedivé!
               </h2>
               <p class="lead-text has-text-centered">
@@ -41,7 +41,7 @@
           <div class="column is-one-quarter-desktop is-half-tablet pb-4">
             <div class="fourstep-block has-text-centered">
               <img src="../assets/svg/fourstep-three.svg" alt="">
-              <h2 class="title is-tertiary hcenter vcenter">
+              <h2 class="title is-5 mb-2 hcenter vcenter">
                 3. Töltsd fel!
               </h2>
               <p class="lead-text has-text-centered">
@@ -52,7 +52,7 @@
           <div class="column is-one-quarter-desktop is-half-tablet pb-4">
             <div class="fourstep-block has-text-centered">
               <img src="../assets/svg/fourstep-four.svg" alt="">
-              <h2 class="title is-tertiary hcenter vcenter">
+              <h2 class="title is-5 mb-2 hcenter vcenter">
                 4. Ünnepelj!
               </h2>
               <p class="lead-text has-text-centered">

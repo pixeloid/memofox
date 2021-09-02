@@ -62,7 +62,7 @@
         font-size: 0.850rem;
         border-radius: $radius;
         margin-left: 0.75rem;
-        font-family: Sora;
+        font-family: Poppins;
 
         &:focus-within, &.is-active, &:focus {
           background-color: transparent;
@@ -143,10 +143,10 @@
         margin-right: $space;
       }
       .title-text {
-        font-family: Sora;
+        font-family: Poppins;
         font-size: 1.5rem;
         text-transform: uppercase;
-        font-weight: 700;
+        font-weight: 600;
       }
     }
     .close {
@@ -193,9 +193,9 @@
         padding: 0 1rem;
 
         .item-category {
-          font-family: Sora;
+          font-family: Poppins;
           text-transform: uppercase;
-          font-weight: 800;
+          font-weight: 700;
         }
         .item-name {
           font-size: $size-detail;
