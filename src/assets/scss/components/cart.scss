@@ -1,0 +1,142 @@
+.basket-wrapper {
+  position: absolute;
+  top: 3.250rem;
+  right: auto;
+  bottom: 2.250rem;
+  width: 30rem;
+  height: 100%;
+  padding: 2rem;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $white;
+    width: 100%;
+    height: 100%;
+    border-radius: $radius;
+    box-shadow: $main-shadow;
+    z-index: -1;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: fixed;
+    top: -500px;
+    left: -3000px;
+    background: $black;
+    width: 6000px;
+    height: 2000px;
+    z-index: -2;
+    opacity: 0.8;
+  }
+
+  .basket-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $space;
+
+    .basket-title-wrapper {
+      color: $secondary;
+      display: flex;
+      align-items: center;
+      max-height: 2rem;
+      .icon-basket {
+        width: 2rem;
+        height: 2rem;
+        margin-right: $space;
+      }
+      .title-text {
+        font-family: Poppins;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+    }
+    .close {
+      max-height: 2rem;
+      cursor: pointer;
+      &:hover {
+        color: darken($secondary, 10%);
+      }
+    }
+  }
+
+  .basket-info {
+    color: $darker;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid $lighter;
+  }
+
+  .basket-item-wrapper {
+
+    .product-item {
+      display: flex;
+      justify-content: space-between;
+      color: $darker;
+      padding: 1rem 0;
+      border-bottom: 1px solid $lighter;
+    }
+
+    .l-item-name {
+      display: flex;
+      align-items: stretch;
+
+      .item-icon {
+        width: 2rem;
+        min-width: 2rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .item-product {
+        max-width: 100%;
+        display: flex;
+        align-items: left;
+        flex-direction: column;
+        padding: 0 1rem;
+
+        .item-category {
+          font-family: Poppins;
+          text-transform: uppercase;
+          font-weight: 700;
+        }
+        .item-name {
+          font-size: $size-detail;
+          line-height: 1.5rem;
+        }
+      }
+    }
+    .r-item-functions {
+      width: 4.5rem;
+      min-width: 4.5rem;
+      .item-price {
+        color: #969696;
+        font-size: $size-detail;
+        line-height: 1.5rem;
+        text-align: right;
+      }
+      .item-function {
+        display: flex;
+        flex-direction: row;
+        align-items: right;
+        .item-delete, .item-add, .item-down {
+          max-height: 1.5rem;
+          cursor: pointer;
+        }
+        .item-number {
+          font-weight: 700;
+          min-width: 1.5rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.add-to-cart {
+
+}

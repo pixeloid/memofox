@@ -61,7 +61,8 @@
             </p>
             <ul class="menu-list">
               <li><router-link :to="{ name: 'Secret', params: {} }">Dashboard</router-link></li>
-              <li><router-link :to="{ name: '', params: {} }">Oldalak</router-link></li>
+              <li><router-link :to="{ name: 'secretBlog', params: {} }">Bejegyzések</router-link></li>
+              <li><router-link :to="{ name: 'secretFaq', params: {} }">Gyakori kérdések</router-link></li>
               <li><router-link :to="{ name: 'secretProducts', params: {} }">Bolt</router-link></li>
               <li><router-link :to="{ name: 'Orders', params: {} }">Megrendelések</router-link></li>
             </ul>

@@ -20,8 +20,10 @@
           <div class="title-with-function mb-5">
             <h2 class="title is-4">Típusok</h2>
           </div>
-          <div>
-            <span v-for="type in productTypes" class="tag is-medium mr-2"> {{ type.type }}</span>
+          <div v-if="productTypes.length > 0">
+            <p v-for="type in productTypes" class="tag is-medium mr-2">
+              {{ type.type }}
+            </p>
           </div>
         </div>
 
@@ -114,9 +116,9 @@ export default {
   data () {
     return {
       productTypes: [{
-        type: "Szolgáltatás"
-      },{
-        type: "Termék"
+        type: 'Szolgáltatás'
+      }, {
+        type: 'Termék'
       }],
       addModal: false,
       editModal: false,
@@ -139,9 +141,8 @@ export default {
       this.editProduct.data = null
 
       this.getProducts()
-
     },
-    getProducts() {
+    getProducts () {
       try {
         db.collection('products').orderBy('name', 'asc').get().then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
@@ -153,17 +154,17 @@ export default {
       }
     },
     getCategoryName (id) {
-      var filtered = this.categories.find(el => el.id === id)
+      const filtered = this.categories.find(el => el.id === id)
       if (filtered) {
         return filtered.data().name
       } else {
         return 'undefined'
       }
     },
-    updateProduct(product) {
+    updateProduct (product) {
       this.editProduct.id = product.id
       this.editProduct.data = product.data()
-      this.editModal = true;
+      this.editModal = true
     },
     deleteProduct (product) {
       this.isLoad = true

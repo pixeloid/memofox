@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:id="player" class="player-block" allowfullscreen="true"></div>
+  <div v-bind:id="player" class="player-block"></div>
 </template>
 
 <script>

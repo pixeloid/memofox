@@ -22,7 +22,7 @@
           background: linear-gradient(to right, rgba(255,255,255,0.90) 0%, rgba(255,255,255,0.80) 30%, rgba(255,255,255,0.60) 60%, rgba(255,255,255,0) 80%);
         }
 
-        padding-bottom: 8rem;
+        padding-bottom: 14rem;
 
         .player-separator {
           position: absolute;
@@ -41,10 +41,17 @@
     .survey-form {
       position: relative;
 
+      .message {
+        //position: absolute;
+        //top: 0;
+        //width: 100%;
+      }
+
       .survey-form-content {
         .panel-block {
           align-items: flex-start;
-          height: 266px;
+          height: 366px;
+          border-bottom: none;
         }
       }
 
@@ -60,14 +67,23 @@
         color: $white;
         width: 1.75rem;
         height: 1.75rem;
-        font-weight: 700;
+        font-weight: 400;
         margin-right: $size;
       }
 
     }
 
     .panel-heading {
-      background-color: $light;
+      //background-color: $light;
+      background-color: $white;
+
+      //border-bottom: 1px solid $light;
+      padding-bottom: 0!important;
+
+      &.title {
+        font-weight: 400;
+        font-size: 1.25rem;
+      }
     }
 
     .survey-buttons {
@@ -75,7 +91,9 @@
       display: flex;
       justify-content: space-between;
 
-      border-top: 1px solid $light;
+      padding-top: 0!important;
+      //border-top: 1px solid $light;
+
       //background-color: $lighter;
       border-radius: 0 0 6px 6px;
 
@@ -94,7 +112,8 @@
     .item-box {
       @include transition(background-color .25s ease-in-out 50ms);
       width: 100%;
-      min-height: 68px;
+      min-height: 80px;
+      //height: 80px;
       position: relative;
       border-radius: 6px;
       //background: rgba(255,255,255, 0.8);

@@ -19,9 +19,9 @@
       <div class="navbar-menu">
         <div class="navbar-end vcenter">
             <router-link class="navbar-item" :to="{ name: 'Products', params: {} }">Szerezz egy videót!</router-link>
-            <router-link class="navbar-item" :to="{ name: '', params: {} }">Blog</router-link>
+            <router-link class="navbar-item" :to="{ name: 'Blog', params: {} }">Blog</router-link>
             <router-link class="navbar-item" :to="{ name: '', params: {} }">Kapcsolat</router-link>
-            <Basket />
+            <Cart />
         </div>
       </div>
     </div>
@@ -30,11 +30,11 @@
 </template>
 
 <script>
-import Basket from '@/components/basket'
+import Cart from '@/components/cart'
 
 export default {
   components: {
-    Basket
+    Cart
   },
   data () {
     return {

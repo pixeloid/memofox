@@ -17,9 +17,14 @@ const routes = [
         component: () => import('../views/secret/Products.vue')
       },
       {
-        path: 'overview',
-        name: 'Overview',
-        component: () => import('../views/secret/Overview.vue')
+        path: 'faq',
+        name: 'secretFaq',
+        component: () => import('../views/secret/Faq.vue')
+      },
+      {
+        path: 'articles',
+        name: 'secretBlog',
+        component: () => import('../views/secret/Blog.vue')
       },
       {
         path: 'orders',
@@ -32,6 +37,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/blog',
+    name: 'Blog',
+    component: () => import('../views/public/blog.vue')
   },
   {
     path: '/products',

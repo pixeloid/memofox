@@ -1,10 +1,10 @@
 <template>
   <article class="is-fullheight">
-    <p class="panel-heading vcenter title is-6 m-0 p-4">
+    <p class="panel-heading vcenter title is-6 m-0 p-6">
       <span class="order-sort-numb hcenter vcenter">{{ surveyPageNumber }}</span>
       <span>{{ title }}</span>
     </p>
-    <div class="panel-block p-5 is-fullheight is-fullwidth">
+    <div class="panel-block p-6 is-fullheight is-fullwidth">
       <div class="columns is-multiline is-variable is-1 item-wrapper is-fullwidth">
         <div v-for='(item, i) in items' :key='i' class="column is-half">
           <div class="item-box vcenter is-row" @click="$parent.itemClick(i, items, multi, type)" v-bind:class="{'is-active': item.active, 'is-info': item.info}">
@@ -18,6 +18,21 @@
         </div>
       </div>
     </div>
+    <div class="survey-buttons has-text-right vcenter p-6">
+      <div class="button-container has-text-left">
+        <button type="button" class="button is-primary is-outline" @click="$parent.backStep">
+          <span class="material-icons-round">fast_rewind</span>
+        </button>
+      </div>
+      <span class="is-size-6"><strong> {{ surveyPageNumber }} / {{ $parent.maximumStep }} </strong></span>
+
+      <div class="button-container has-text-right">
+        <button v-if="$parent.maximumStep != surveyPageNumber" type="button" class="button is-primary is-outline" @click="$parent.nextStep">
+          <span>{{ nextButtonText }}</span>
+          <span class="icon material-icons-round">fast_forward</span>
+        </button>
+      </div>
+    </div>
   </article>
 </template>
 
@@ -25,26 +40,29 @@
 export default {
   props: {
     surveyPageNumber: Number,
-    title: String,
+    title: String
   },
-  data() {
+  data () {
     return {
+      nextButtonText: 'Következő',
       multi: false,
       type: this.$parent.selectedItems.videoPersonal,
       items: [{
         active: false,
         name: 'Személyes Videó',
         icon: 'face',
+        // eslint-disable-next-line no-undef
         image: require('@/assets/svg/personal.svg')
       }, {
         active: false,
         name: 'Céges Videó',
         icon: 'maps_home_work',
+        // eslint-disable-next-line no-undef
         image: require('@/assets/svg/business.svg')
       }]
     }
   },
-  created() {
+  created () {
     this.$parent.filterActiveElement(this.items, this.type, this.multi)
   }
 }

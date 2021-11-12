@@ -6,6 +6,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  .columns {
+    margin: 0!important;
+  }
+
   .subtitle, .title {
     line-height: normal;
   }
@@ -54,6 +58,11 @@
   .hcenter {
     display: flex;
     justify-content: center;
+  }
+
+  .vleft {
+    text-align: left;
+    justify-content: left;
   }
 
   .memo, .fox {
