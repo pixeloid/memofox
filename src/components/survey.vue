@@ -30,13 +30,15 @@
           <div class="survey-form-content" v-if="surveyPageNumber == 5">
             <videoLength v-bind:surveyPageNumber="surveyPageNumber" v-bind:title="'Válaszd ki, hogy milyen hosszú legyen a videód!'" />
           </div>
+          <!--
           <div class="survey-form-content" v-if="surveyPageNumber == 6">
             <VideoSize v-bind:surveyPageNumber="surveyPageNumber" v-bind:title="'Becsüld meg a felvételeid méretét!'" />
           </div>
-          <div class="survey-form-content" v-if="surveyPageNumber == 7">
+        -->
+          <div class="survey-form-content" v-if="surveyPageNumber == 6">
             <StepEmail v-bind:surveyPageNumber="surveyPageNumber" v-bind:title="'Végül csak pár adat.'" />
           </div>
-          <div class="survey-form-content" v-if="surveyPageNumber == 8">
+          <div class="survey-form-content" v-if="surveyPageNumber == 7">
             <StepSummary v-bind:surveyPageNumber="surveyPageNumber" v-bind:title="'Elkészült a személyre szabott ajánlatod.'" />
           </div>
 
@@ -109,9 +111,10 @@ export default {
   data: function () {
     return {
       products: [],
+      size: [],
       categories: [],
       surveyPageNumber: 1,
-      maximumStep: 8,
+      maximumStep: 7,
       backButton: false,
       selectedItems: {
         videoType: [],

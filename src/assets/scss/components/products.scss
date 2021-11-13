@@ -1,7 +1,23 @@
 #app {
   .main {
 
+    .summary-table {
+      td {
+        vertical-align: top;
+      }
+      .has-border-none {
+        border-bottom: none;
+      }
+
+      .is-last-row {
+        td {
+          border-bottom: 2px solid $tertiary;
+        }
+      }
+    }
+
     &.products-wrapper {
+
       .product-hero {
         background-image: url('~@/assets/image/photo07698.jpg');
         background-position: center right;
@@ -39,6 +55,11 @@
     }
 
     .survey-form {
+
+      .columns {
+        margin: 0!important;
+      }
+
       position: relative;
 
       .message {
@@ -50,7 +71,7 @@
       .survey-form-content {
         .panel-block {
           align-items: flex-start;
-          height: 366px;
+          min-height: 366px;
           border-bottom: none;
         }
       }
@@ -145,7 +166,7 @@
       }
 
       .name {
-        font-size: 1.25rem;
+        font-size: 1rem;
         //font-weight: 600;
       }
 

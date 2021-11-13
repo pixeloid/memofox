@@ -1,14 +1,10 @@
 .main {
   background-color: $light;
 
-  font-family: Jaldi;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  .columns {
-    margin: 0!important;
-  }
 
   .subtitle, .title {
     line-height: normal;
@@ -26,7 +22,7 @@
     color: $secondary;
   }
 
-  .is-strong {
+  .is-strong, strong {
     font-weight: 700;
   }
 

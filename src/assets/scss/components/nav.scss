@@ -59,10 +59,10 @@
         height: 2.5rem;
         color: $white;
         font-weight: 600;
-        font-size: 0.850rem;
+        font-size: 1rem;
         border-radius: $radius;
         margin-left: 0.75rem;
-        font-family: Poppins;
+        font-family: 'DM Sans', sans-serif;
 
         &:focus-within, &.is-active, &:focus {
           background-color: transparent;

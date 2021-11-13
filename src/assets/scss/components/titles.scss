@@ -4,9 +4,9 @@
     justify-content: space-between;
   }
   .title {
-    font-family: Poppins;
-    font-weight: 600;
-    color: $secondary;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    color: $tertiary;
     flex-direction: row;
 
     &.editor-service-title {

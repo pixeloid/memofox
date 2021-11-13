@@ -49,13 +49,13 @@ export default {
       type: this.$parent.selectedItems.videoPersonal,
       items: [{
         active: false,
-        name: 'Személyes Videó',
+        name: 'Személyes',
         icon: 'face',
         // eslint-disable-next-line no-undef
         image: require('@/assets/svg/personal.svg')
       }, {
         active: false,
-        name: 'Céges Videó',
+        name: 'Céges',
         icon: 'maps_home_work',
         // eslint-disable-next-line no-undef
         image: require('@/assets/svg/business.svg')

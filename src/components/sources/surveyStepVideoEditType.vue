@@ -9,7 +9,7 @@
         <div v-for='(item, i) in items' :key='i' class="column is-fullheight">
           <div class="item-box is-fullheight" @click="$parent.itemClick(i, items, multi, type)" v-bind:class="{'is-active': item.active, 'is-info': item.info}">
             <p class="name">
-              {{ item.name }}
+              <strong>{{ item.name }}</strong>
             </p>
 
             <div v-if="item.desc">
