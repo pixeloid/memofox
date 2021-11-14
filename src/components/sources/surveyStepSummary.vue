@@ -99,9 +99,9 @@
       <span class="is-size-6"><strong> {{ surveyPageNumber }} / {{ $parent.maximumStep }} </strong></span>
 
       <div class="button-container has-text-right">
-        <button type="button" class="button is-primary">
-          <span>Rendelés leadása</span>
-        </button>
+        <router-link class="button is-primary" :to="{ name: 'Checkout', params: { selectedItems } }">
+          Rendelés leadása
+        </router-link>
       </div>
     </div>
   </article>
@@ -115,6 +115,7 @@ export default {
   },
   data: function() {
     return {
+      selectedItems: [],
       standardAmount: null,
       packAmount: [
         10,20,30,40,50
